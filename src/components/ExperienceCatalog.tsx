@@ -31,6 +31,8 @@ function FilterGroup<T extends string>({
         <button
           type="button"
           aria-pressed={value === null}
+          data-filter-group={label}
+          data-filter-value=""
           onClick={() => onChange(null)}
           className={cn("rounded-full border px-4 py-2 text-sm transition", value === null ? "border-ink bg-ink text-ivory" : "border-ink/15 text-ink hover:border-ink/40")}
         >
@@ -41,6 +43,8 @@ function FilterGroup<T extends string>({
             key={o}
             type="button"
             aria-pressed={value === o}
+            data-filter-group={label}
+            data-filter-value={o}
             onClick={() => onChange(value === o ? null : o)}
             className={cn("rounded-full border px-4 py-2 text-sm transition", value === o ? "border-ink bg-ink text-ivory" : "border-ink/15 text-ink hover:border-ink/40")}
           >
@@ -90,7 +94,7 @@ export function ExperienceCatalog() {
       <motion.ul layout className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         <AnimatePresence mode="popLayout">
           {results.map((p) => (
-            <motion.li key={p.slug} layout initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.97 }} transition={{ duration: 0.35 }}>
+            <motion.li key={p.slug} data-types={p.types.join(" ")} data-destinations={p.destinations.join("|")} layout initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.97 }} transition={{ duration: 0.35 }}>
               <PackageCard pkg={p} />
             </motion.li>
           ))}

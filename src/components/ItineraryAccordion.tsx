@@ -14,6 +14,18 @@ export function ItineraryAccordion({ days, tone = "light", defaultOpen = 0 }: { 
       {days.map((d, i) => {
         const isOpen = open === i;
         const id = `dia-${i}`;
+        const body = (
+          <div className="pb-8 md:pl-[7.25rem]">
+            <p className={cn("max-w-2xl leading-relaxed", dark ? "text-ivory/75" : "text-ink-muted")}>{d.description}</p>
+            <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
+              {d.highlights.map((h) => (
+                <li key={h} className={cn("flex items-start gap-2.5 text-sm", dark ? "text-ivory/85" : "text-ink")}>
+                  <Check className={cn("mt-0.5 h-4 w-4 shrink-0", dark ? "text-gold-light" : "text-gold-deep")} aria-hidden /> {h}
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
         return (
           <li key={d.label} className={cn("border-b", dark ? "border-ivory/15" : "border-ink/10")}>
             <h3>
@@ -49,19 +61,16 @@ export function ItineraryAccordion({ days, tone = "light", defaultOpen = 0 }: { 
                   transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                   className="overflow-hidden"
                 >
-                  <div className="pb-8 md:pl-[7.25rem]">
-                    <p className={cn("max-w-2xl leading-relaxed", dark ? "text-ivory/75" : "text-ink-muted")}>{d.description}</p>
-                    <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
-                      {d.highlights.map((h) => (
-                        <li key={h} className={cn("flex items-start gap-2.5 text-sm", dark ? "text-ivory/85" : "text-ink")}>
-                          <Check className={cn("mt-0.5 h-4 w-4 shrink-0", dark ? "text-gold-light" : "text-gold-deep")} aria-hidden /> {h}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {body}
                 </motion.div>
               )}
             </AnimatePresence>
+            {/* Los días cerrados también quedan en el HTML (SEO y vista sin JavaScript) */}
+            {!isOpen && (
+              <div id={`${id}-panel`} role="region" aria-labelledby={`${id}-btn`} hidden>
+                {body}
+              </div>
+            )}
           </li>
         );
       })}
