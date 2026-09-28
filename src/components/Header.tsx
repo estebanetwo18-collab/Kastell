@@ -85,11 +85,11 @@ export function Header() {
         )}
       >
         <nav aria-label="Principal" className="container flex h-20 items-center justify-between gap-6">
-          <div className="w-36 shrink-0 md:w-44">
+          <div className="w-36 shrink-0 md:w-44 lg:w-32 xl:w-44">
             <Logo variant={solid ? "dark" : "light"} priority />
           </div>
 
-          <ul className="hidden items-center gap-1 xl:flex [&>li]:flex [&>li]:items-center">
+          <ul className="hidden items-center gap-0.5 lg:flex xl:gap-1 [&>li]:flex [&>li]:items-center">
             {mainNav.slice(1).map((item) =>
               item.href === "/experiencias" ? (
                 <li
@@ -102,7 +102,7 @@ export function Header() {
                     <Link
                       href={item.href}
                       className={cn(
-                        "rounded-full py-2 pl-3.5 pr-1 text-[0.82rem] font-medium tracking-wide transition",
+                        "whitespace-nowrap rounded-full py-2 pl-2.5 pr-1 text-[0.8rem] xl:pl-3.5 xl:text-[0.82rem] font-medium tracking-wide transition",
                         solid ? "text-ink hover:text-gold-deep" : "text-ivory hover:text-gold-light",
                         isActive(item.href) && (solid ? "text-gold-deep" : "text-gold-light")
                       )}
@@ -164,7 +164,7 @@ export function Header() {
                     href={item.href}
                     aria-current={isActive(item.href) ? "page" : undefined}
                     className={cn(
-                      "rounded-full px-3.5 py-2 text-[0.82rem] font-medium tracking-wide transition",
+                      "whitespace-nowrap rounded-full px-2.5 py-2 text-[0.8rem] xl:px-3.5 xl:text-[0.82rem] font-medium tracking-wide transition",
                       solid ? "text-ink hover:text-gold-deep" : "text-ivory hover:text-gold-light",
                       isActive(item.href) && (solid ? "text-gold-deep" : "text-gold-light")
                     )}
@@ -181,9 +181,9 @@ export function Header() {
               href={waLink(waMessages.header)}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-gold hidden px-5 py-3 text-[0.8rem] sm:inline-flex"
+              className="btn-gold hidden whitespace-nowrap px-5 py-3 text-[0.8rem] sm:inline-flex lg:px-4 xl:px-5"
             >
-              <WhatsAppIcon size={16} /> Cotizar por WhatsApp
+              <WhatsAppIcon size={16} /> Cotizar<span className="lg:hidden xl:inline"> por WhatsApp</span>
             </a>
             <button
               type="button"
@@ -191,7 +191,7 @@ export function Header() {
               aria-expanded={menuOpen}
               aria-controls="menu-movil"
               aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-              className={cn("rounded-full p-2.5 transition xl:hidden", solid ? "text-ink hover:bg-ink/5" : "text-ivory hover:bg-ivory/10")}
+              className={cn("rounded-full p-2.5 transition lg:hidden", solid ? "text-ink hover:bg-ink/5" : "text-ivory hover:bg-ivory/10")}
             >
               {menuOpen ? <X className="h-6 w-6" aria-hidden /> : <Menu className="h-6 w-6" aria-hidden />}
             </button>
@@ -206,7 +206,7 @@ export function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-x-0 bottom-0 top-20 overflow-y-auto bg-ivory xl:hidden"
+            className="fixed inset-x-0 bottom-0 top-20 overflow-y-auto bg-ivory lg:hidden"
           >
             <nav aria-label="Menú móvil" className="container flex min-h-full flex-col justify-between gap-10 py-10">
               <ul className="space-y-1">
