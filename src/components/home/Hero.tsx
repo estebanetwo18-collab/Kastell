@@ -23,7 +23,7 @@ export function Hero() {
 
       <div className="container grid gap-12 pb-24 pt-40 md:pb-28 lg:grid-cols-12 lg:items-end lg:pb-32">
         <div className="lg:col-span-8">
-          <p className="eyebrow mb-7 text-ivory [text-shadow:0_1px_12px_rgba(20,19,16,0.6)] before:hidden">
+          <p className="eyebrow mb-7 text-ivory [text-shadow:0_1px_12px_rgba(20,19,16,0.6)]">
             Destination Management Company · Costa Rica
           </p>
           <h1 className="text-display-xl text-gold-light [text-shadow:0_2px_24px_rgba(20,19,16,0.45)]">

@@ -58,10 +58,6 @@
   .eyebrow {
     @apply inline-flex items-center gap-3 font-sans text-[0.78rem] font-bold uppercase tracking-eyebrow;
   }
-  .eyebrow::before {
-    content: "";
-    @apply block h-px w-8 bg-current opacity-70;
-  }
   .section {
     @apply py-24 md:py-32;
   }
