@@ -6,22 +6,35 @@ import { waMessages } from "@/lib/whatsapp";
 import { Reveal } from "../Reveal";
 import { WhatsAppButton } from "../WhatsAppButton";
 
-/** Escudo con degradado detrás del retrato (proporción 300×340). */
-function Shield() {
+// Forma de escudo en coordenadas relativas (0–1), proporción 300×420.
+const SHIELD_PATH =
+  "M0.08 0H0.92Q1 0 1 0.0571V0.7381Q1 0.7714 0.96 0.7881L0.54 0.981Q0.5 1 0.46 0.981L0.04 0.7881Q0 0.7714 0 0.7381V0.0571Q0 0 0.08 0Z";
+
+/** Retrato recortado en forma de escudo, con un escudo dorado desplazado detrás. */
+function ShieldPortrait({ src, alt }: { src: string; alt: string }) {
   return (
-    <svg viewBox="0 0 300 340" preserveAspectRatio="none" className="absolute inset-x-0 bottom-0 h-[80%] w-full drop-shadow-[0_30px_40px_rgba(20,19,16,0.22)]" aria-hidden>
-      <defs>
-        <linearGradient id="kastell-shield" x1="0" y1="0" x2="0.35" y2="1">
-          <stop offset="0%" stopColor="#EDE5D8" />
-          <stop offset="55%" stopColor="#C9A874" />
-          <stop offset="100%" stopColor="#B08D57" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M24 0H276Q300 0 300 24V230Q300 244 288 251L162 332Q150 340 138 332L12 251Q0 244 0 230V24Q0 0 24 0Z"
-        fill="url(#kastell-shield)"
-      />
-    </svg>
+    <figure className="relative mx-auto aspect-[300/420] w-full max-w-[21rem]">
+      <svg width="0" height="0" className="absolute" aria-hidden>
+        <defs>
+          <clipPath id="kastell-shield" clipPathUnits="objectBoundingBox">
+            <path d={SHIELD_PATH} />
+          </clipPath>
+          <linearGradient id="kastell-shield-gold" x1="0" y1="0" x2="0.4" y2="1">
+            <stop offset="0%" stopColor="#EDE5D8" />
+            <stop offset="55%" stopColor="#C9A874" />
+            <stop offset="100%" stopColor="#B08D57" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <svg viewBox="0 0 1 1" preserveAspectRatio="none" className="absolute inset-0 h-full w-full translate-x-4 translate-y-4" aria-hidden>
+        <path d={SHIELD_PATH} fill="url(#kastell-shield-gold)" />
+      </svg>
+      <div className="absolute inset-0 drop-shadow-[0_24px_36px_rgba(20,19,16,0.25)]">
+        <div className="relative h-full w-full [clip-path:url(#kastell-shield)]">
+          <Image src={src} alt={alt} fill sizes="(min-width: 1024px) 21rem, 80vw" className="object-cover object-top" />
+        </div>
+      </div>
+    </figure>
   );
 }
 
@@ -87,19 +100,8 @@ export function ValueProposition() {
           </Reveal>
 
           <Reveal delay={0.1} className="order-1 lg:order-2 lg:col-span-5 lg:col-start-8">
-            <figure className="relative mx-auto aspect-[300/425] w-full max-w-[22rem]">
-              <Shield />
-              {/* Recorte de la foto provista por el cliente (documento "Kastell Página web"). TODO: pedir versión en alta resolución */}
-              <div className="absolute inset-0 [clip-path:polygon(0_0,100%_0,100%_79%,50%_100%,0_79%)]">
-                <Image
-                  src="/images/maria-recorte.png"
-                  alt="María, de Kastell Tours & Events, conduciendo una ceremonia"
-                  fill
-                  sizes="(min-width: 1024px) 22rem, 80vw"
-                  className="object-cover object-top"
-                />
-              </div>
-            </figure>
+            {/* Foto provista por el cliente (documento "Kastell Página web"). TODO: pedir versión en alta resolución */}
+            <ShieldPortrait src="/images/maria.jpg" alt="María, de Kastell Tours & Events, conduciendo una ceremonia al aire libre" />
           </Reveal>
         </div>
       </div>
