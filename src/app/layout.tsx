@@ -59,6 +59,8 @@ export const viewport: Viewport = {
   themeColor: "#141310",
   width: "device-width",
   initialScale: 1,
+  // Permite usar env(safe-area-inset-*) para respetar notch y barra inferior del iPhone
+  viewportFit: "cover",
 };
 
 const jsonLd = {

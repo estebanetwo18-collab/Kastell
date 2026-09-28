@@ -26,7 +26,7 @@ function FilterGroup<T extends string>({
 }) {
   return (
     <fieldset>
-      <legend className="mb-3 text-[0.68rem] font-semibold uppercase tracking-eyebrow text-gold-deep">{label}</legend>
+      <legend className="mb-3 text-xs font-semibold uppercase tracking-eyebrow text-gold-deep">{label}</legend>
       <div className="flex flex-wrap gap-2">
         <button
           type="button"
@@ -34,7 +34,7 @@ function FilterGroup<T extends string>({
           data-filter-group={label}
           data-filter-value=""
           onClick={() => onChange(null)}
-          className={cn("rounded-full border px-4 py-2 text-sm transition", value === null ? "border-ink bg-ink text-ivory" : "border-ink/15 text-ink hover:border-ink/40")}
+          className={cn("min-h-[44px] rounded-full border px-4 py-2 text-sm transition", value === null ? "border-ink bg-ink text-ivory" : "border-ink/15 text-ink hover:border-ink/40")}
         >
           Todos
         </button>
@@ -46,7 +46,7 @@ function FilterGroup<T extends string>({
             data-filter-group={label}
             data-filter-value={o}
             onClick={() => onChange(value === o ? null : o)}
-            className={cn("rounded-full border px-4 py-2 text-sm transition", value === o ? "border-ink bg-ink text-ivory" : "border-ink/15 text-ink hover:border-ink/40")}
+            className={cn("min-h-[44px] rounded-full border px-4 py-2 text-sm transition", value === o ? "border-ink bg-ink text-ivory" : "border-ink/15 text-ink hover:border-ink/40")}
           >
             {getLabel(o)}
           </button>
@@ -76,7 +76,7 @@ export function ExperienceCatalog() {
             <SlidersHorizontal className="h-5 w-5 text-gold-deep" aria-hidden /> Filtra tu experiencia
           </p>
           {(type || dest) && (
-            <button type="button" onClick={() => { setType(null); setDest(null); }} className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold-deep">
+            <button type="button" onClick={() => { setType(null); setDest(null); }} className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-gold-deep">
               <X className="h-4 w-4" aria-hidden /> Limpiar filtros
             </button>
           )}
@@ -87,7 +87,7 @@ export function ExperienceCatalog() {
         </div>
       </div>
 
-      <p className="mt-10 text-sm text-stone" aria-live="polite">
+      <p className="mt-10 text-base font-semibold text-ink-muted" aria-live="polite">
         {results.length === 1 ? "1 experiencia" : `${results.length} experiencias`}
       </p>
 
@@ -101,7 +101,7 @@ export function ExperienceCatalog() {
           <motion.li key="a-medida" layout className="flex">
             <div className="flex w-full flex-col justify-between rounded-4xl bg-jungle p-8 text-ivory md:p-10">
               <div>
-                <p className="text-[0.68rem] font-semibold uppercase tracking-eyebrow text-gold-light">
+                <p className="text-xs font-semibold uppercase tracking-eyebrow text-gold-light">
                   {results.length ? "Tailor-Made" : "Sin resultados… todavía"}
                 </p>
                 <h3 className="mt-4 font-serif text-4xl leading-tight">

@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 
@@ -29,7 +29,14 @@ export function ContactProvider({ children }: { children: React.ReactNode }) {
     }
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const t = window.setTimeout(() => dialogRef.current?.querySelector<HTMLElement>("input:not([type=hidden]):not(.hidden), select")?.focus(), 80);
+    // En pantallas táctiles enfocamos el diálogo (no el input) para no abrir el teclado de golpe.
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
+    const t = window.setTimeout(() => {
+      const target = coarse
+        ? dialogRef.current
+        : dialogRef.current?.querySelector<HTMLElement>("input:not([type=hidden]):not(.hidden), select");
+      target?.focus();
+    }, 80);
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
       if (e.key === "Tab" && dialogRef.current) {
@@ -50,38 +57,42 @@ export function ContactProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <ContactContext.Provider value={{ open }}>
-      {children}
-      <AnimatePresence>
-        {opts && (
-          <motion.div
-            className="fixed inset-0 z-[80] flex items-end justify-center sm:items-center sm:p-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <div className="absolute inset-0 bg-ink/70 backdrop-blur-sm" onClick={close} aria-hidden />
+      {/* Respeta prefers-reduced-motion en todas las animaciones de Framer Motion */}
+      <MotionConfig reducedMotion="user">
+        {children}
+        <AnimatePresence>
+          {opts && (
             <motion.div
-              ref={dialogRef}
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="contact-modal-title"
-              className="relative max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded-t-4xl bg-ivory p-7 shadow-float sm:rounded-4xl sm:p-10"
-              initial={{ y: 40, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 40, opacity: 0 }}
-              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              className="fixed inset-0 z-[80] flex items-end justify-center sm:items-center sm:p-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
             >
-              <button onClick={close} className="absolute right-5 top-5 rounded-full p-2 text-ink-muted transition hover:bg-ink/5 hover:text-ink" aria-label="Cerrar formulario">
-                <X className="h-5 w-5" aria-hidden />
-              </button>
-              <p className="eyebrow mb-4 text-gold-deep">Cotiza tu experiencia</p>
-              <h2 id="contact-modal-title" className="mb-2 font-serif text-4xl">Empecemos a planear tu viaje</h2>
-              <p className="mb-8 text-ink-muted">Cuéntanos tu idea y te respondemos con una propuesta pensada para ti.</p>
-              <ContactForm compact defaultExperience={opts.experience} packageName={opts.packageName} onDone={close} />
+              <div className="absolute inset-0 bg-ink/70 backdrop-blur-sm" onClick={close} aria-hidden />
+              <motion.div
+                ref={dialogRef}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="contact-modal-title"
+                tabIndex={-1}
+                className="relative max-h-[92dvh] w-full max-w-2xl overflow-y-auto overscroll-contain rounded-t-4xl bg-ivory p-7 pb-[calc(1.75rem+env(safe-area-inset-bottom))] shadow-float focus:outline-none sm:rounded-4xl sm:p-10"
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 40, opacity: 0 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <button onClick={close} className="absolute right-4 top-4 rounded-full p-3 text-ink-muted transition hover:bg-ink/5 hover:text-ink" aria-label="Cerrar formulario">
+                  <X className="h-5 w-5" aria-hidden />
+                </button>
+                <p className="eyebrow mb-4 text-gold-deep">Cotiza tu experiencia</p>
+                <h2 id="contact-modal-title" className="mb-2 font-serif text-4xl">Empecemos a planear tu viaje</h2>
+                <p className="mb-8 text-ink-muted">Cuéntanos tu idea y te respondemos con una propuesta pensada para ti.</p>
+                <ContactForm compact defaultExperience={opts.experience} packageName={opts.packageName} onDone={close} />
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
+      </MotionConfig>
     </ContactContext.Provider>
   );
 }

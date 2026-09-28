@@ -53,7 +53,7 @@ export function ValueProposition() {
                 <Image src="/images/maria.jpg" alt="María, de Kastell Tours & Events, conduciendo una ceremonia al aire libre" fill sizes="176px" className="object-cover object-top" />
               </div>
               <figcaption className="relative">
-                <p className="text-[0.68rem] font-semibold uppercase tracking-eyebrow text-gold-light">Detrás de cada detalle</p>
+                <p className="text-xs font-semibold uppercase tracking-eyebrow text-gold-light">Detrás de cada detalle</p>
                 {/* TODO: confirmar apellido y cargo de María con el cliente */}
                 <p className="mt-2 font-serif text-4xl font-light">María</p>
                 <p className="text-sm text-ivory/70">Anfitriona y maestra de ceremonias</p>

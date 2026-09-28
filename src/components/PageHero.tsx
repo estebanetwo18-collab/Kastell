@@ -23,9 +23,9 @@ export function PageHero({
       <Image src={image.src} alt={image.alt} fill priority sizes="100vw" className="-z-10 animate-slow-zoom object-cover" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/45 to-ink/30" aria-hidden />
       <div className="container pb-16 pt-44 md:pb-24">
-        <nav aria-label="Ruta de navegación" className="mb-8 text-xs text-ivory/70">
+        <nav aria-label="Ruta de navegación" className="mb-8 text-sm text-ivory/75">
           <ol className="flex items-center gap-2">
-            <li><Link href="/" className="transition hover:text-ivory">Inicio</Link></li>
+            <li><Link href="/" className="tap-target transition hover:text-ivory">Inicio</Link></li>
             <li aria-hidden><ChevronRight className="h-3 w-3" /></li>
             <li aria-current="page" className="text-ivory">{breadcrumb}</li>
           </ol>

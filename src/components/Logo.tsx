@@ -32,7 +32,7 @@ export function Logo({
   );
   if (!asLink) return img;
   return (
-    <Link href="/" aria-label="Kastell Tours & Events — Inicio" className="block">
+    <Link href="/" aria-label="Kastell Tours & Events — Inicio" className="block py-1">
       {img}
     </Link>
   );

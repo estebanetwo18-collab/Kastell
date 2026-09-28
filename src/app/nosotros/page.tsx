@@ -120,7 +120,7 @@ export default function NosotrosPage() {
               { ...audiences.b2c, key: "b2c", msg: waMessages.general, cta: "Quiero planear mi viaje" },
             ].map((a, i) => (
               <Reveal key={a.key} delay={0.08 * i} className="flex flex-col rounded-4xl bg-ivory p-8 md:p-12">
-                <p className="text-[0.68rem] font-semibold uppercase tracking-eyebrow text-gold-deep">{a.key.toUpperCase()}</p>
+                <p className="text-xs font-semibold uppercase tracking-eyebrow text-gold-deep">{a.key.toUpperCase()}</p>
                 <h3 className="mt-3 font-serif text-4xl">{a.title}</h3>
                 <p className="mt-4 leading-relaxed text-ink-muted">{a.intro}</p>
                 <ul className="mt-8 flex-1 space-y-3">

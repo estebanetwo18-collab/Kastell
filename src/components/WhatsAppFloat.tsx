@@ -20,7 +20,7 @@ export function WhatsAppFloat() {
       rel="noopener noreferrer"
       aria-label="Escríbenos por WhatsApp (abre en una nueva pestaña)"
       className={cn(
-        "group fixed bottom-5 right-5 z-[70] flex items-center gap-3 rounded-full bg-[#1F7A4D] p-4 text-white shadow-float ring-4 ring-[#1F7A4D]/15 transition-all duration-500 hover:bg-[#186540] sm:bottom-7 sm:right-7",
+        "group fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom))] right-[calc(1.25rem+env(safe-area-inset-right))] z-[70] flex items-center gap-3 rounded-full bg-[#1F7A4D] p-4 text-white shadow-float ring-4 ring-[#1F7A4D]/15 transition-all duration-500 hover:bg-[#186540] sm:bottom-[calc(1.75rem+env(safe-area-inset-bottom))] sm:right-[calc(1.75rem+env(safe-area-inset-right))]",
         show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0"
       )}
     >

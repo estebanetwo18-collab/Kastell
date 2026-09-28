@@ -74,7 +74,7 @@ export default function PackagePage({ params }: Props) {
         <div className="container grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <Reveal>
-              <Link href="/experiencias" className="mb-10 inline-flex items-center gap-2 text-sm font-semibold text-gold-deep">
+              <Link href="/experiencias" className="mb-10 inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-gold-deep">
                 <ArrowLeft className="h-4 w-4" aria-hidden /> Todas las experiencias
               </Link>
               <p className="font-serif text-3xl leading-snug">{pkg.description}</p>

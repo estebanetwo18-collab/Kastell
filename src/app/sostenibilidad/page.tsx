@@ -71,7 +71,7 @@ export default function SostenibilidadPage() {
             <div className="mx-auto grid aspect-square max-w-xs place-items-center rounded-full border border-ivory/20 p-10 text-center">
               <div>
                 <ShieldCheck className="mx-auto h-16 w-16 text-gold-light" strokeWidth={1} aria-hidden />
-                <p className="mt-5 text-[0.68rem] font-semibold uppercase tracking-eyebrow text-gold-light">Compromiso ético</p>
+                <p className="mt-5 text-xs font-semibold uppercase tracking-eyebrow text-gold-light">Compromiso ético</p>
                 <p className="mt-2 font-serif text-2xl leading-tight">Protección de la niñez y la adolescencia</p>
               </div>
             </div>

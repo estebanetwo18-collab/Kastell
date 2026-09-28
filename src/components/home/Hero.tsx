@@ -21,7 +21,7 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/30 to-ink/40" aria-hidden />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/75 via-ink/25 to-transparent" aria-hidden />
 
-      <div className="container grid gap-12 pb-14 pt-40 md:pb-20 lg:grid-cols-12 lg:items-end">
+      <div className="container grid gap-12 pb-24 pt-40 md:pb-28 lg:grid-cols-12 lg:items-end lg:pb-32">
         <div className="lg:col-span-8">
           <p className="eyebrow mb-7 text-ivory [text-shadow:0_1px_12px_rgba(20,19,16,0.6)] before:hidden">
             Destination Management Company · Costa Rica
@@ -43,7 +43,7 @@ export function Hero() {
         </div>
 
         {/* Tarjeta flotante: experiencia destacada */}
-        <div className="hidden lg:col-span-4 lg:block">
+        <div className="hidden lg:col-span-4 lg:block lg:pb-10">
           <Link
             href={`/experiencias/${featuredPackage.slug}`}
             className="group ml-auto flex max-w-sm items-center gap-4 rounded-3xl border border-ivory/15 bg-ivory/10 p-3 pr-5 backdrop-blur-md transition hover:bg-ivory/20"
@@ -52,7 +52,7 @@ export function Hero() {
               <Image src={featuredPackage.image.src} alt="" fill sizes="96px" className="object-cover transition duration-700 group-hover:scale-110" />
             </span>
             <span className="flex-1">
-              <span className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-gold-light">Experiencia destacada</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-light">Experiencia destacada</span>
               <span className="mt-1 block font-serif text-xl leading-tight">{featuredPackage.title}</span>
               <span className="mt-1 block text-xs text-ivory/70">
                 {featuredPackage.durationDays} días / {featuredPackage.durationNights} noches

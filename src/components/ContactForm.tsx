@@ -114,7 +114,7 @@ export function ContactForm({
 
   const labelCls = cn("label", dark && "text-ivory/70");
   const fieldCls = cn("field", dark && "border-ivory/20 bg-ivory/5 text-ivory placeholder:text-ivory/40 focus:bg-ivory/10");
-  const errCls = cn("mt-1.5 text-xs", dark ? "text-[#F2B8A0]" : "text-[#9B2C1C]");
+  const errCls = cn("mt-1.5 text-sm font-semibold", dark ? "text-[#F2B8A0]" : "text-[#9B2C1C]");
   const fieldProps = (name: string) => ({
     id: `${uid}-${name}`,
     name,
@@ -138,17 +138,17 @@ export function ContactForm({
       )}
       <div className="sm:col-span-2">
         <label htmlFor={`${uid}-name`} className={labelCls}>Nombre completo</label>
-        <input {...fieldProps("name")} type="text" autoComplete="name" required className={fieldCls} placeholder="¿Cómo te llamas?" />
+        <input {...fieldProps("name")} type="text" autoComplete="name" autoCapitalize="words" enterKeyHint="next" required className={fieldCls} placeholder="¿Cómo te llamas?" />
         <Err name="name" />
       </div>
       <div>
         <label htmlFor={`${uid}-email`} className={labelCls}>Correo electrónico</label>
-        <input {...fieldProps("email")} type="email" autoComplete="email" required className={fieldCls} placeholder="tu@correo.com" />
+        <input {...fieldProps("email")} type="email" inputMode="email" autoComplete="email" autoCapitalize="none" spellCheck={false} enterKeyHint="next" required className={fieldCls} placeholder="tu@correo.com" />
         <Err name="email" />
       </div>
       <div>
         <label htmlFor={`${uid}-phone`} className={labelCls}>Teléfono / WhatsApp</label>
-        <input {...fieldProps("phone")} type="tel" autoComplete="tel" required className={fieldCls} placeholder="+1 555 000 0000" />
+        <input {...fieldProps("phone")} type="tel" inputMode="tel" autoComplete="tel" enterKeyHint="next" required className={fieldCls} placeholder="+1 555 000 0000" />
         <Err name="phone" />
       </div>
       <div>
@@ -167,11 +167,11 @@ export function ContactForm({
         <label htmlFor={`${uid}-date`} className={labelCls}>
           Fecha tentativa <span className="normal-case tracking-normal opacity-70">(opcional)</span>
         </label>
-        <input {...fieldProps("date")} type="text" className={fieldCls} placeholder="Ej. marzo 2027" />
+        <input {...fieldProps("date")} type="text" enterKeyHint="next" className={fieldCls} placeholder="Ej. marzo 2027" />
       </div>
       <div className="sm:col-span-2">
         <label htmlFor={`${uid}-message`} className={labelCls}>Mensaje</label>
-        <textarea {...fieldProps("message")} required rows={compact ? 3 : 5} className={cn(fieldCls, "resize-y")}
+        <textarea {...fieldProps("message")} required enterKeyHint="send" rows={compact ? 3 : 5} className={cn(fieldCls, "resize-y")}
           placeholder="Cuéntanos qué imaginas: cuántas personas, qué te emociona, qué celebras…" />
         <Err name="message" />
       </div>
@@ -185,7 +185,7 @@ export function ContactForm({
         </button>
         <p className={cn("text-xs leading-relaxed", dark ? "text-ivory/60" : "text-stone")}>
           ¿Prefieres hablar ya? WhatsApp{" "}
-          <a href={waLink("Hola Kastell, les escribo desde el formulario de su sitio web.")} target="_blank" rel="noopener noreferrer" className={cn("font-semibold underline underline-offset-4", dark ? "text-gold-light" : "text-gold-deep")}>
+          <a href={waLink("Hola Kastell, les escribo desde el formulario de su sitio web.")} target="_blank" rel="noopener noreferrer" className={cn("tap-target font-semibold underline underline-offset-4", dark ? "text-gold-light" : "text-gold-deep")}>
             {site.whatsapp.display}
           </a>
         </p>

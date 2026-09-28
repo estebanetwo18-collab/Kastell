@@ -17,25 +17,25 @@ function TopBar({ hidden }: { hidden: boolean }) {
     <div
       className={cn(
         "overflow-hidden bg-ink text-ivory/80 transition-[max-height,opacity] duration-500",
-        hidden ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
+        hidden ? "max-h-0 opacity-0" : "max-h-11 opacity-100"
       )}
     >
-      <div className="container flex h-10 items-center justify-between gap-4 text-[0.72rem] tracking-wide">
+      <div className="container flex h-11 items-center justify-between gap-4 text-[0.8rem] tracking-wide">
         <div className="flex items-center gap-5">
-          <a href={waLink(waMessages.header)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition hover:text-gold-light">
+          <a href={waLink(waMessages.header)} target="_blank" rel="noopener noreferrer" className="inline-flex h-11 items-center gap-2 transition hover:text-gold-light">
             <WhatsAppIcon size={14} /> <span>{site.whatsapp.display}</span>
           </a>
-          <a href={site.phone.href} className="hidden items-center gap-2 transition hover:text-gold-light md:inline-flex">
+          <a href={site.phone.href} className="hidden h-11 items-center gap-2 transition hover:text-gold-light md:inline-flex">
             <Phone className="h-3.5 w-3.5" aria-hidden /> Llámanos
           </a>
         </div>
         {/* TODO: agregar sello de Tripadvisor / certificaciones cuando el cliente los tenga */}
         <p className="hidden text-ivory/60 lg:block">Destination Management Company · San José, Costa Rica · Desde {site.foundedYear}</p>
-        <div className="flex items-center gap-4">
-          <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kastell" className="transition hover:text-gold-light">
+        <div className="-mr-3 flex items-center">
+          <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kastell" className="grid h-11 w-11 place-items-center transition hover:text-gold-light">
             <InstagramIcon size={15} />
           </a>
-          <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook de Kastell" className="transition hover:text-gold-light">
+          <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook de Kastell" className="grid h-11 w-11 place-items-center transition hover:text-gold-light">
             <FacebookIcon size={15} />
           </a>
         </div>
@@ -62,6 +62,18 @@ export function Header() {
     setDropdown(false);
   }, [pathname]);
 
+  // Escape cierra el menú móvil y el desplegable
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMenuOpen(false);
+        setDropdown(false);
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
+
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
@@ -73,11 +85,11 @@ export function Header() {
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
+    <header className="fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)]">
       <a href="#contenido" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-gold focus:px-4 focus:py-2 focus:text-ink">
         Saltar al contenido
       </a>
-      <TopBar hidden={scrolled} />
+      <TopBar hidden={scrolled || menuOpen} />
       <div
         className={cn(
           "transition-all duration-500",
@@ -102,7 +114,7 @@ export function Header() {
                     <Link
                       href={item.href}
                       className={cn(
-                        "whitespace-nowrap rounded-full py-2 pl-2.5 pr-1 text-[0.8rem] xl:pl-3.5 xl:text-[0.82rem] font-medium tracking-wide transition",
+                        "inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full pl-2.5 pr-1 text-[0.8rem] xl:pl-3.5 xl:text-[0.82rem] font-medium tracking-wide transition",
                         solid ? "text-ink hover:text-gold-deep" : "text-ivory hover:text-gold-light",
                         isActive(item.href) && (solid ? "text-gold-deep" : "text-gold-light")
                       )}
@@ -115,7 +127,7 @@ export function Header() {
                       aria-controls="menu-experiencias"
                       aria-label="Ver paquetes turísticos"
                       onClick={() => setDropdown((d) => !d)}
-                      className={cn("rounded-full p-1.5 pr-3 transition", solid ? "text-ink" : "text-ivory")}
+                      className={cn("grid h-11 w-11 place-items-center rounded-full transition", solid ? "text-ink" : "text-ivory")}
                     >
                       <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", dropdown && "rotate-180")} aria-hidden />
                     </button>
@@ -131,7 +143,7 @@ export function Header() {
                         className="absolute left-1/2 top-full w-[26rem] -translate-x-1/2 pt-3"
                       >
                         <div className="rounded-3xl border border-ink/5 bg-ivory p-3 shadow-float">
-                          <p className="px-4 pb-2 pt-3 text-[0.65rem] font-semibold uppercase tracking-eyebrow text-gold-deep">Paquetes turísticos</p>
+                          <p className="px-4 pb-2 pt-3 text-xs font-semibold uppercase tracking-eyebrow text-gold-deep">Paquetes turísticos</p>
                           <ul>
                             {packages.map((p) => (
                               <li key={p.slug}>
@@ -164,7 +176,7 @@ export function Header() {
                     href={item.href}
                     aria-current={isActive(item.href) ? "page" : undefined}
                     className={cn(
-                      "whitespace-nowrap rounded-full px-2.5 py-2 text-[0.8rem] xl:px-3.5 xl:text-[0.82rem] font-medium tracking-wide transition",
+                      "inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full px-2.5 text-[0.8rem] xl:px-3.5 xl:text-[0.82rem] font-medium tracking-wide transition",
                       solid ? "text-ink hover:text-gold-deep" : "text-ivory hover:text-gold-light",
                       isActive(item.href) && (solid ? "text-gold-deep" : "text-gold-light")
                     )}
@@ -183,7 +195,10 @@ export function Header() {
               rel="noopener noreferrer"
               className="btn-gold hidden whitespace-nowrap px-5 py-3 text-[0.8rem] sm:inline-flex lg:px-4 xl:px-5"
             >
-              <WhatsAppIcon size={16} /> Cotizar<span className="lg:hidden xl:inline"> por WhatsApp</span>
+              <WhatsAppIcon size={16} />
+              <span>
+                Cotizar<span className="lg:hidden xl:inline"> por WhatsApp</span>
+              </span>
             </a>
             <button
               type="button"
@@ -206,9 +221,9 @@ export function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-x-0 bottom-0 top-20 overflow-y-auto bg-ivory lg:hidden"
+            className="fixed inset-x-0 bottom-0 top-[calc(5rem+env(safe-area-inset-top))] overflow-y-auto overscroll-contain bg-ivory lg:hidden"
           >
-            <nav aria-label="Menú móvil" className="container flex min-h-full flex-col justify-between gap-10 py-10">
+            <nav aria-label="Menú móvil" className="container flex min-h-full flex-col justify-between gap-10 pb-[calc(7rem+env(safe-area-inset-bottom))] pt-6">
               <ul className="space-y-1">
                 {mainNav.map((item, i) => (
                   <motion.li key={item.href} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.04 * i }}>
@@ -227,9 +242,9 @@ export function Header() {
                   <WhatsAppIcon size={18} /> Cotizar por WhatsApp
                 </a>
                 <div className="flex items-center justify-center gap-6 text-ink-muted">
-                  <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kastell"><InstagramIcon size={20} /></a>
-                  <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook de Kastell"><FacebookIcon size={20} /></a>
-                  <a href={site.phone.href} className="text-sm font-medium">{site.phone.display}</a>
+                  <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kastell" className="grid h-11 w-11 place-items-center"><InstagramIcon size={20} /></a>
+                  <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook de Kastell" className="grid h-11 w-11 place-items-center"><FacebookIcon size={20} /></a>
+                  <a href={site.phone.href} className="inline-flex min-h-[44px] items-center text-sm font-medium">{site.phone.display}</a>
                 </div>
               </div>
             </nav>

@@ -18,8 +18,11 @@
   ::selection {
     @apply bg-gold text-ink;
   }
+  /* Foco visible sobre fondos claros y oscuros: contorno dorado + halo oscuro */
   :focus-visible {
-    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-ivory;
+    outline: 2px solid theme("colors.gold.light");
+    outline-offset: 3px;
+    box-shadow: 0 0 0 5px rgba(20, 19, 16, 0.55);
   }
   h1, h2, h3, h4 {
     @apply font-serif font-normal;
@@ -35,8 +38,25 @@
 }
 
 @layer components {
+  /* Márgenes laterales que respetan el notch del iPhone en horizontal */
+  .container {
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
+  }
+  @media (min-width: 768px) {
+    .container {
+      padding-left: max(2rem, env(safe-area-inset-left));
+      padding-right: max(2rem, env(safe-area-inset-right));
+    }
+  }
+  @media (min-width: 1280px) {
+    .container {
+      padding-left: max(2.5rem, env(safe-area-inset-left));
+      padding-right: max(2.5rem, env(safe-area-inset-right));
+    }
+  }
   .eyebrow {
-    @apply inline-flex items-center gap-3 font-sans text-[0.7rem] font-semibold uppercase tracking-eyebrow;
+    @apply inline-flex items-center gap-3 font-sans text-[0.78rem] font-bold uppercase tracking-eyebrow;
   }
   .eyebrow::before {
     content: "";
@@ -46,7 +66,7 @@
     @apply py-24 md:py-32;
   }
   .btn {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3.5 font-serif text-sm font-semibold tracking-wide transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full min-h-[44px] px-6 py-3.5 font-serif text-sm font-semibold tracking-wide transition-all duration-300 active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 disabled:active:scale-100;
   }
   .btn-gold {
     @apply btn bg-gold-light text-ink shadow-[0_8px_24px_-8px_rgba(20,19,16,0.55)] ring-1 ring-ivory/40 hover:bg-ivory hover:shadow-soft;
@@ -63,6 +83,11 @@
   .link-underline {
     @apply relative inline-flex items-center gap-2 font-serif text-sm font-semibold;
   }
+  /* Área táctil de 44px sin alterar el diseño */
+  .link-underline::before {
+    content: "";
+    @apply absolute -inset-x-1 -inset-y-3;
+  }
   .link-underline::after {
     content: "";
     @apply absolute -bottom-1 left-0 h-px w-full origin-left scale-x-100 bg-current transition-transform duration-500;
@@ -74,7 +99,15 @@
     @apply inline-flex items-center gap-1.5 rounded-full border border-ink/15 px-3 py-1 text-xs font-medium text-ink-muted;
   }
   .field {
-    @apply w-full rounded-xl border border-ink/15 bg-white/70 px-4 py-3.5 text-[0.95rem] text-ink placeholder:text-stone/70 transition focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold/30;
+    @apply w-full rounded-xl border border-ink/15 bg-white/70 px-4 py-3.5 text-base text-ink placeholder:text-stone/70 transition focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold/30;
+  }
+  /* Amplía el área táctil de enlaces pequeños (íconos, enlaces de texto) a 44×44 */
+  .tap-target {
+    @apply relative;
+  }
+  .tap-target::before {
+    content: "";
+    @apply absolute left-1/2 top-1/2 h-11 w-full min-w-[44px] -translate-x-1/2 -translate-y-1/2;
   }
   .label {
     @apply mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted;
