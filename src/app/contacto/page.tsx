@@ -56,7 +56,7 @@ export default function ContactoPage() {
                     {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="group flex items-center gap-4 rounded-3xl border border-ink/10 bg-white/50 p-5 transition hover:border-gold/50 hover:bg-white"
                   >
-                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-ivory-deep text-gold-deep transition group-hover:bg-gold group-hover:text-ink">
+                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-jungle text-gold-light transition group-hover:bg-gold-light group-hover:text-ink">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
                     <span>
@@ -67,7 +67,7 @@ export default function ContactoPage() {
                 </Reveal>
               ))}
               <Reveal as="li" className="flex items-center gap-4 p-5">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-ivory-deep text-gold-deep">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-jungle text-gold-light">
                   <MapPin className="h-5 w-5" aria-hidden />
                 </span>
                 <span>
@@ -76,7 +76,7 @@ export default function ContactoPage() {
                 </span>
               </Reveal>
               <Reveal as="li" className="flex items-center gap-4 px-5">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-ivory-deep text-gold-deep">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-jungle text-gold-light">
                   <Clock className="h-5 w-5" aria-hidden />
                 </span>
                 <span className="text-sm text-ink-muted">Respondemos con rapidez a viajeros y agencias.</span>

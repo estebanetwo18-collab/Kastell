@@ -39,7 +39,7 @@ export function SustainabilityTeaser() {
             <ul className="grid gap-4 self-end lg:col-span-5 lg:col-start-8">
               {items.map(({ icon: Icon, title, text }, i) => (
                 <Reveal as="li" key={title} delay={0.08 * i} className="flex items-start gap-5 rounded-3xl border border-ivory/15 bg-ink/40 p-6 backdrop-blur-md">
-                  <Icon className="h-7 w-7 shrink-0 text-gold-light" strokeWidth={1.3} aria-hidden />
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gold-light"><Icon className="h-6 w-6 text-ink" strokeWidth={1.8} aria-hidden /></span>
                   <div>
                     <h3 className="font-serif text-xl">{title}</h3>
                     <p className="mt-1 text-sm leading-relaxed text-ivory/70">{text}</p>

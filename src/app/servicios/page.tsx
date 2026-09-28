@@ -43,8 +43,8 @@ export default function ServiciosPage() {
               <Reveal as="li" key={s.id} delay={0.04 * (i % 3)}>
                 <article id={s.id} className="group flex h-full scroll-mt-32 flex-col rounded-4xl border border-ink/10 bg-white/50 p-8 transition duration-500 hover:-translate-y-1 hover:border-gold/40 hover:bg-white hover:shadow-soft">
                   <div className="flex items-start justify-between">
-                    <span className="grid h-14 w-14 place-items-center rounded-full bg-ivory-deep">
-                      <DynamicIcon name={s.icon} className="h-6 w-6 text-gold-deep" />
+                    <span className="grid h-14 w-14 place-items-center rounded-full bg-jungle">
+                      <DynamicIcon name={s.icon} className="h-6 w-6 text-gold-light" strokeWidth={1.8} />
                     </span>
                     <span className="font-serif text-lg text-ink/30">{String(i + 1).padStart(2, "0")}</span>
                   </div>
@@ -80,7 +80,7 @@ export default function ServiciosPage() {
           <ul className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
             {differentiators.map((d, i) => (
               <Reveal as="li" key={d.title} delay={0.05 * i} className="rounded-3xl border border-ivory/15 p-7">
-                <DynamicIcon name={d.icon} className="h-8 w-8 text-gold-light" strokeWidth={1.2} />
+                <DynamicIcon name={d.icon} className="h-8 w-8 text-gold-light" strokeWidth={1.8} />
                 <h3 className="mt-6 font-serif text-2xl">{d.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ivory/70">{d.description}</p>
               </Reveal>

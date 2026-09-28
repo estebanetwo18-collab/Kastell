@@ -48,7 +48,7 @@ export default function SostenibilidadPage() {
           <div className="mt-16 grid gap-6 lg:grid-cols-2">
             {commitments.map(({ icon: Icon, title, intro, items }, i) => (
               <Reveal key={title} delay={0.08 * i} className="rounded-4xl border border-ink/10 bg-white/50 p-8 md:p-12">
-                <Icon className="h-10 w-10 text-gold-deep" strokeWidth={1.2} aria-hidden />
+                <Icon className="h-10 w-10 text-gold-deep" strokeWidth={1.7} aria-hidden />
                 <h2 className="mt-8 font-serif text-4xl">{title}</h2>
                 <p className="mt-3 text-lg leading-relaxed text-ink-muted">{intro}</p>
                 <ul className="mt-8 space-y-3">
@@ -81,7 +81,7 @@ export default function SostenibilidadPage() {
             <Reveal delay={0.1}>
               <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ivory/80">{sustainability.code.body}</p>
               <div className="mt-8 flex items-start gap-4 rounded-3xl border border-ivory/15 p-6">
-                <Scale className="mt-0.5 h-6 w-6 shrink-0 text-gold-light" strokeWidth={1.3} aria-hidden />
+                <Scale className="mt-0.5 h-6 w-6 shrink-0 text-gold-light" strokeWidth={1.7} aria-hidden />
                 <p className="text-ivory/80">{sustainability.legal}</p>
               </div>
               <div className="mt-10 flex flex-wrap gap-3">

@@ -9,7 +9,7 @@ const variants: Record<Variant, string> = {
   ink: "btn-ink",
   "ghost-light": "btn-ghost-light",
   "ghost-dark": "btn-ghost-dark",
-  link: "link-underline text-gold-deep",
+  link: "link-underline text-ink",
   "link-light": "link-underline text-gold-light",
 };
 

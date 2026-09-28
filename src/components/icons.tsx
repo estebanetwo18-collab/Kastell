@@ -68,7 +68,7 @@ const iconMap: Record<string, LucideIcon> = {
   "party-popper": PartyPopper,
 };
 
-export function DynamicIcon({ name, className, strokeWidth = 1.4 }: { name: string; className?: string; strokeWidth?: number }) {
+export function DynamicIcon({ name, className, strokeWidth = 1.7 }: { name: string; className?: string; strokeWidth?: number }) {
   const Icon = iconMap[name] ?? Compass;
   return <Icon className={className} strokeWidth={strokeWidth} aria-hidden="true" />;
 }

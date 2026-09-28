@@ -89,7 +89,7 @@ export function ContactForm({
           : "Hubo un problema de conexión. No te preocupes: envíanos tu solicitud por WhatsApp, con tus datos ya resumidos.";
     return (
       <div role="status" aria-live="polite" className={cn("flex flex-col items-start gap-5", dark ? "text-ivory" : "text-ink")}>
-        <CheckCircle2 className={cn("h-10 w-10", dark ? "text-gold-light" : "text-gold-deep")} strokeWidth={1.3} aria-hidden />
+        <CheckCircle2 className={cn("h-10 w-10", dark ? "text-gold-light" : "text-gold-deep")} strokeWidth={1.7} aria-hidden />
         <h3 className="font-serif text-3xl">{title}</h3>
         <p className={cn("max-w-md leading-relaxed", dark ? "text-ivory/75" : "text-ink-muted")}>{body}</p>
         <div className="flex flex-wrap gap-3">

@@ -28,7 +28,9 @@ export function Difference() {
           {differentiators.map((d, i) => (
             <Reveal as="li" key={d.title} delay={0.05 * i} className="group bg-ivory p-8 transition-colors duration-500 hover:bg-white md:p-10">
               <div className="flex items-start justify-between">
-                <DynamicIcon name={d.icon} className="h-9 w-9 text-gold-deep transition-transform duration-500 group-hover:-translate-y-1" strokeWidth={1.2} />
+                <span className="grid h-14 w-14 place-items-center rounded-full bg-jungle transition-transform duration-500 group-hover:-translate-y-1">
+                  <DynamicIcon name={d.icon} className="h-6 w-6 text-gold-light" strokeWidth={1.8} />
+                </span>
                 <span className="font-serif text-lg text-ink/30">0{i + 1}</span>
               </div>
               <h3 className="mt-10 font-serif text-2xl leading-snug md:text-[1.7rem]">{d.title}</h3>

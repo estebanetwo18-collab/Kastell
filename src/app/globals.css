@@ -46,22 +46,22 @@
     @apply py-24 md:py-32;
   }
   .btn {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3.5 font-serif text-sm font-semibold tracking-wide transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-60;
   }
   .btn-gold {
-    @apply btn bg-gold text-ink hover:bg-gold-light hover:shadow-soft;
+    @apply btn bg-gold-light text-ink shadow-[0_8px_24px_-8px_rgba(20,19,16,0.55)] ring-1 ring-ivory/40 hover:bg-ivory hover:shadow-soft;
   }
   .btn-ink {
     @apply btn bg-ink text-ivory hover:bg-ink-soft;
   }
   .btn-ghost-light {
-    @apply btn border border-ivory/50 text-ivory backdrop-blur-sm hover:border-ivory hover:bg-ivory hover:text-ink;
+    @apply btn border-2 border-ivory bg-ink/35 text-ivory backdrop-blur-sm hover:bg-ivory hover:text-ink;
   }
   .btn-ghost-dark {
-    @apply btn border border-ink/25 text-ink hover:border-ink hover:bg-ink hover:text-ivory;
+    @apply btn border-2 border-ink text-ink hover:bg-ink hover:text-ivory;
   }
   .link-underline {
-    @apply relative inline-flex items-center gap-2 text-sm font-semibold;
+    @apply relative inline-flex items-center gap-2 font-serif text-sm font-semibold;
   }
   .link-underline::after {
     content: "";

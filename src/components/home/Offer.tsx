@@ -34,8 +34,8 @@ export function Offer() {
                 <Image src={p.image.src} alt={p.image.alt} fill sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw" className="object-cover opacity-75 transition duration-[1.4s] group-hover:scale-105 group-hover:opacity-60" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent" aria-hidden />
                 <div className="relative p-7 md:p-8">
-                  <span className="mb-6 grid h-14 w-14 place-items-center rounded-full border border-ivory/30 bg-ivory/10 backdrop-blur">
-                    <DynamicIcon name={p.icon} className="h-6 w-6 text-gold-light" />
+                  <span className="mb-6 grid h-14 w-14 place-items-center rounded-full bg-gold-light shadow-soft">
+                    <DynamicIcon name={p.icon} className="h-6 w-6 text-ink" strokeWidth={1.8} />
                   </span>
                   <p className="text-[0.68rem] font-semibold uppercase tracking-eyebrow text-gold-light">{p.subtitle}</p>
                   <h3 className="mt-2 font-serif text-3xl md:text-4xl">
