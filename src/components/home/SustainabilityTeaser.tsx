@@ -22,7 +22,7 @@ export function SustainabilityTeaser() {
             <Reveal className="lg:col-span-6">
               <p className="eyebrow mb-6 text-gold-light">Sostenibilidad</p>
               <h2 className="text-display-md">
-                Viajar bonito es también <em className="italic text-gold-light">viajar bien</em>
+                Viajar bonito es también <span className="text-gold-light">viajar bien</span>
               </h2>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-ivory/80">
                 Contamos con una política de sostenibilidad formal que guía cómo operamos y con quién trabajamos. Porque el lujo verdadero cuida el lugar que lo hace posible.

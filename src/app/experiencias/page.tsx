@@ -19,7 +19,7 @@ export default function ExperienciasPage() {
       <PageHero
         eyebrow="Experiencias"
         breadcrumb="Experiencias"
-        title={<>Viajes que se <em className="italic text-gold-light">sienten</em>, no solo se recorren</>}
+        title={<>Viajes que se <span className="text-gold-light">sienten</span>, no solo se recorren</>}
         intro="Itinerarios de autor y líneas de experiencia a la medida. Todos pueden adaptarse a tus fechas, tu grupo y tu forma de viajar."
         // TODO: reemplazar con foto real de experiencias Kastell
         image={{ src: "/images/puentes-colgantes.jpg", alt: "Viajero cruzando un puente colgante entre montañas" }}
@@ -31,7 +31,7 @@ export default function ExperienciasPage() {
         <div className="container">
           <SectionHeading
             eyebrow="Paquetes turísticos"
-            title={<>Elige tu punto de <em className="italic text-gold-deep">partida</em></>}
+            title={<>Elige tu punto de <span className="text-gold-deep">partida</span></>}
             intro="Filtra por tipo de experiencia o por destino. Si no encuentras exactamente lo que buscas, lo diseñamos contigo."
             className="mb-14"
           />

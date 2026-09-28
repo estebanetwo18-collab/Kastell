@@ -8,18 +8,19 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { ContactProvider } from "@/components/ContactModal";
 import { pillars } from "@/content";
 
-const serif = Cormorant_Garamond({
+// Títulos: Manrope · Textos y subtítulos: Cormorant Garamond
+const display = Manrope({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-serif",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-display",
   display: "swap",
 });
 
-const sans = Manrope({
+const text = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-sans",
+  style: ["normal", "italic"],
+  variable: "--font-text",
   display: "swap",
 });
 
@@ -96,7 +97,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es-CR" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="es-CR" className={`${display.variable} ${text.variable}`}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <ContactProvider>

@@ -36,24 +36,34 @@ export function ValueProposition() {
           <Reveal>
             <p className="eyebrow mb-6 text-gold-deep">Kastell Tours & Events</p>
             <h2 className="text-display-md">
-              Creando viajes que se recuerdan <em className="italic text-gold-deep">desde 2021</em>
+              Creando viajes que se recuerdan <span className="text-gold-deep">desde 2021</span>
             </h2>
-            <p className="mt-7 text-lg leading-relaxed text-ink-muted">
+            <p className="mt-7 text-xl leading-relaxed text-ink-muted">
               Nacimos en San José con una idea sencilla y ambiciosa: combinar el arte de viajar con la excelencia en el servicio. Diseñamos, coordinamos y operamos experiencias en todo Costa Rica para viajeros, parejas, empresas y agencias de todo el mundo.
             </p>
           </Reveal>
 
-          <dl className="mt-12 grid grid-cols-2 gap-4">
-            {stats.map((s, i) => (
-              <Reveal key={s.label} delay={0.08 * i} className="rounded-3xl border border-ink/10 bg-white/50 p-6">
-                <dt className="sr-only">{s.label}</dt>
-                <dd>
-                  <span className="block font-serif text-5xl leading-none text-ink">{s.value}</span>
-                  <span className="mt-3 block text-sm leading-snug text-ink-muted">{s.label}</span>
-                </dd>
-              </Reveal>
-            ))}
-          </dl>
+          {/* La persona detrás de cada detalle */}
+          <Reveal delay={0.1} className="mt-12">
+            <figure className="relative grid items-end gap-6 overflow-hidden rounded-4xl bg-jungle p-6 text-ivory shadow-float sm:grid-cols-[11rem_1fr] sm:p-8">
+              <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full border border-gold/30" aria-hidden />
+              <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full border border-gold/20" aria-hidden />
+              <div className="relative mx-auto aspect-[3/4] w-40 overflow-hidden rounded-t-full border-4 border-gold/60 sm:mx-0 sm:w-44">
+                {/* Foto de María provista por el cliente (documento "Kastell Página web"). TODO: pedir versión en alta resolución */}
+                <Image src="/images/maria.jpg" alt="María, de Kastell Tours & Events, conduciendo una ceremonia al aire libre" fill sizes="176px" className="object-cover object-top" />
+              </div>
+              <figcaption className="relative">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-eyebrow text-gold-light">Detrás de cada detalle</p>
+                {/* TODO: confirmar apellido y cargo de María con el cliente */}
+                <p className="mt-2 font-serif text-4xl font-light">María</p>
+                <p className="text-sm text-ivory/70">Anfitriona y maestra de ceremonias</p>
+                <blockquote className="mt-5 border-l-2 border-gold pl-4 text-lg italic leading-snug text-ivory/90">
+                  “Mari, gracias por todo, jamás vamos a olvidar este día.”
+                  <footer className="mt-1 text-sm not-italic text-ivory/60">Javier Álvarez, cliente</footer>
+                </blockquote>
+              </figcaption>
+            </figure>
+          </Reveal>
 
           <Reveal delay={0.2} className="mt-10 flex flex-wrap items-center gap-6">
             <WhatsAppButton message={waMessages.stats} variant="ink">
@@ -64,6 +74,23 @@ export function ValueProposition() {
             </Link>
           </Reveal>
         </div>
+      </div>
+
+      {/* Cifras */}
+      <div className="container mt-28">
+        <Reveal>
+          <dl className="grid overflow-hidden rounded-4xl bg-ink text-ivory sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((s, i) => (
+              <div key={s.label} className={`relative p-8 md:p-10 ${i > 0 ? "border-t border-ivory/10 sm:border-t-0 sm:border-l" : ""} ${i === 2 ? "sm:border-l-0 sm:border-t lg:border-l lg:border-t-0" : ""} ${i === 3 ? "sm:border-t lg:border-t-0" : ""}`}>
+                <dt className="sr-only">{s.label}</dt>
+                <dd>
+                  <span className="block font-serif text-6xl font-light leading-none text-gold-light md:text-7xl">{s.value}</span>
+                  <span className="mt-4 block text-lg leading-snug text-ivory/75">{s.label}</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
       </div>
     </section>
   );

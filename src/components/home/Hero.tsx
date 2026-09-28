@@ -19,15 +19,17 @@ export function Hero() {
         className="-z-10 animate-slow-zoom object-cover"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/30 to-ink/40" aria-hidden />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/60 via-transparent to-transparent" aria-hidden />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/75 via-ink/25 to-transparent" aria-hidden />
 
       <div className="container grid gap-12 pb-14 pt-40 md:pb-20 lg:grid-cols-12 lg:items-end">
         <div className="lg:col-span-8">
-          <p className="eyebrow mb-7 text-gold-light">Destination Management Company · Costa Rica</p>
-          <h1 className="text-display-xl">
+          <p className="eyebrow mb-7 text-ivory [text-shadow:0_1px_12px_rgba(20,19,16,0.6)] before:hidden">
+            Destination Management Company · Costa Rica
+          </p>
+          <h1 className="text-display-xl text-gold-light [text-shadow:0_2px_24px_rgba(20,19,16,0.45)]">
             El arte de crear
             <br />
-            <em className="font-light italic text-gold-light">experiencias</em> únicas
+            <span className="font-light text-ivory">experiencias</span> únicas
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-ivory/85 md:text-xl">{site.promise}</p>
           <div className="mt-10 flex flex-wrap gap-3">

@@ -26,8 +26,10 @@ const config: Config = {
         stone: { DEFAULT: "#6B6358" },
       },
       fontFamily: {
-        serif: ["var(--font-serif)", "Georgia", "serif"],
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        // `font-serif` = fuente de títulos, `font-sans` = fuente de textos/subtítulos.
+        // (Nombres históricos: hoy los títulos van en Manrope y los textos en Cormorant Garamond.)
+        serif: ["var(--font-display)", "system-ui", "sans-serif"],
+        sans: ["var(--font-text)", "Georgia", "serif"],
       },
       fontSize: {
         "display-xl": ["clamp(3rem, 7.5vw, 7.25rem)", { lineHeight: "0.98", letterSpacing: "-0.02em" }],

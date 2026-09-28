@@ -23,7 +23,7 @@ export default function NosotrosPage() {
       <PageHero
         eyebrow="Nosotros"
         breadcrumb="Nosotros"
-        title={<>Donde el arte de viajar se encuentra con la <em className="italic text-gold-light">excelencia</em></>}
+        title={<>Donde el arte de viajar se encuentra con la <span className="text-gold-light">excelencia</span></>}
         intro={site.essence}
         // TODO: reemplazar con foto real del equipo Kastell
         image={{ src: "/images/monteverde-bosque.jpg", alt: "Bosque nuboso de Costa Rica con luz filtrada" }}
@@ -38,7 +38,7 @@ export default function NosotrosPage() {
             <Reveal>
               <p className="eyebrow mb-6 text-gold-deep">Nuestra historia</p>
               <h2 className="text-display-md">
-                Desde {site.foundedYear}, <em className="italic text-gold-deep">en San José</em>
+                Desde {site.foundedYear}, <span className="text-gold-deep">en San José</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1} className="relative mt-12 aspect-[4/5] overflow-hidden rounded-4xl">
@@ -86,13 +86,13 @@ export default function NosotrosPage() {
         <div className="container">
           <SectionHeading
             eyebrow="Nuestros valores"
-            title={<>Siete palabras que <em className="italic text-gold-deep">nos guían</em></>}
+            title={<>Siete palabras que <span className="text-gold-deep">nos guían</span></>}
             intro="No son un eslogan: son los criterios con los que tomamos cada decisión, desde elegir un hotel hasta escribir un mensaje."
           />
           <ul className="mt-16 grid gap-px overflow-hidden rounded-4xl bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v, i) => (
               <Reveal as="li" key={v.title} delay={0.04 * i} className="bg-ivory p-8 md:p-10">
-                <span className="font-serif text-lg italic text-gold-deep">0{i + 1}</span>
+                <span className="font-serif text-lg text-gold-deep">0{i + 1}</span>
                 <h3 className="mt-6 font-serif text-3xl">{v.title}</h3>
                 <p className="mt-3 leading-relaxed text-ink-muted">{v.description}</p>
               </Reveal>
@@ -112,7 +112,7 @@ export default function NosotrosPage() {
         <div className="container">
           <SectionHeading
             eyebrow="Con quién trabajamos"
-            title={<>Aliados de la industria, <em className="italic text-gold-deep">anfitriones</em> de viajeros</>}
+            title={<>Aliados de la industria, <span className="text-gold-deep">anfitriones</span> de viajeros</>}
           />
           <div className="mt-16 grid gap-6 lg:grid-cols-2">
             {[

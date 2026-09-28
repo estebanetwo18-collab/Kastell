@@ -118,7 +118,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col gap-4 border-t border-ivory/10 pt-8 text-xs text-ivory/50 md:flex-row md:items-center md:justify-between">
           <p>© {year} {site.name}. Todos los derechos reservados.</p>
-          <p className="font-serif text-sm italic text-ivory/60">{site.essence}</p>
+          <p className="font-serif text-sm text-ivory/60">{site.essence}</p>
           <a href={site.sustainabilityPolicyPdf} target="_blank" rel="noopener" className="inline-flex items-center gap-1 transition hover:text-ivory">
             Política de sostenibilidad (PDF) <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
           </a>

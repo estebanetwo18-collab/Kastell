@@ -17,7 +17,7 @@ export function Offer() {
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <SectionHeading
             eyebrow="Qué ofrecemos"
-            title={<>Cinco maneras de vivir <em className="italic text-gold-deep">Costa Rica</em></>}
+            title={<>Cinco maneras de vivir <span className="text-gold-deep">Costa Rica</span></>}
             intro="Cada línea de experiencia tiene su propio lenguaje, pero todas comparten lo esencial: diseño a la medida, ejecución impecable y una atención que se siente."
           />
           <Reveal>

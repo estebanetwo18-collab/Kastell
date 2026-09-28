@@ -61,7 +61,7 @@ export default function BodasEventosPage() {
       <PageHero
         eyebrow="Bodas & Eventos"
         breadcrumb="Bodas & Eventos"
-        title={<>Celebraciones que se <em className="italic text-gold-light">recuerdan</em> para siempre</>}
+        title={<>Celebraciones que se <span className="text-gold-light">recuerdan</span> para siempre</>}
         intro="Bodas destino, eventos corporativos y celebraciones especiales en Costa Rica, diseñados con creatividad y ejecutados con precisión."
         // TODO: reemplazar con foto real de una boda Kastell
         image={{ src: "/images/boda-pareja.jpg", alt: "Pareja de recién casados en un bosque" }}
@@ -76,7 +76,7 @@ export default function BodasEventosPage() {
           <div className="lg:col-span-5">
             <SectionHeading
               eyebrow="Destination Weddings"
-              title={<>Su boda en Costa Rica, <em className="italic text-gold-deep">sin preocupaciones</em></>}
+              title={<>Su boda en Costa Rica, <span className="text-gold-deep">sin preocupaciones</span></>}
               intro="Selva, volcanes, playas del Pacífico o una hacienda en el Valle Central. Parejas de todo el mundo eligen Costa Rica para decir “sí”, y nosotros nos encargamos de que todo sea tal como lo soñaron."
             />
             <Reveal delay={0.1} className="mt-10 flex flex-wrap gap-3">
@@ -87,7 +87,7 @@ export default function BodasEventosPage() {
           <ol className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
             {weddingSteps.map((s, i) => (
               <Reveal as="li" key={s.title} delay={0.06 * i} className="rounded-4xl border border-ink/10 bg-white/50 p-8">
-                <span className="font-serif text-5xl italic text-gold">0{i + 1}</span>
+                <span className="font-serif text-5xl text-gold">0{i + 1}</span>
                 <h3 className="mt-6 font-serif text-2xl">{s.title}</h3>
                 <p className="mt-2 leading-relaxed text-ink-muted">{s.text}</p>
               </Reveal>

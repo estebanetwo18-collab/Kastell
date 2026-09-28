@@ -30,7 +30,7 @@ export default function ContactoPage() {
       <PageHero
         eyebrow="Contacto"
         breadcrumb="Contacto"
-        title={<>Empecemos a planear tu <em className="italic text-gold-light">viaje</em></>}
+        title={<>Empecemos a planear tu <span className="text-gold-light">viaje</span></>}
         intro="Cuéntanos qué imaginas. Te respondemos con una propuesta pensada para ti, sin compromiso."
         // TODO: reemplazar con foto real
         image={{ src: "/images/contacto.jpg", alt: "Playa tropical con palmeras y arena blanca" }}

@@ -27,7 +27,7 @@ export default function SostenibilidadPage() {
       <PageHero
         eyebrow="Sostenibilidad"
         breadcrumb="Sostenibilidad"
-        title={<>Cuidamos el lugar que nos <em className="italic text-gold-light">inspira</em></>}
+        title={<>Cuidamos el lugar que nos <span className="text-gold-light">inspira</span></>}
         intro={sustainability.intro}
         // TODO: reemplazar con foto real de una experiencia sostenible Kastell
         image={{ src: "/images/sostenibilidad-bosque.jpg", alt: "Sendero en un bosque tropical iluminado por el sol" }}
@@ -42,7 +42,7 @@ export default function SostenibilidadPage() {
         <div className="container">
           <SectionHeading
             eyebrow="Nuestros compromisos"
-            title={<>Un lujo que <em className="italic text-gold-deep">deja huella positiva</em></>}
+            title={<>Un lujo que <span className="text-gold-deep">deja huella positiva</span></>}
             intro="La sostenibilidad no es un extra en nuestros viajes: es parte de cómo trabajamos todos los días."
           />
           <div className="mt-16 grid gap-6 lg:grid-cols-2">
@@ -105,7 +105,7 @@ export default function SostenibilidadPage() {
           <div>
             <SectionHeading
               eyebrow="Viajar con propósito"
-              title={<>Experiencias con <em className="italic text-gold-deep">comunidades locales</em></>}
+              title={<>Experiencias con <span className="text-gold-deep">comunidades locales</span></>}
               intro="Diseñamos momentos que conectan a nuestros viajeros con la gente, la cultura y los proyectos que hacen única a Costa Rica —como la visita al Proyecto de Rescate del Patrimonio Ancestral Villa Maleku, incluida en nuestra luna de miel—, siempre con respeto y prácticas responsables en zonas protegidas."
             />
             <Reveal delay={0.1} className="mt-10">

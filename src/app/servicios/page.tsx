@@ -23,7 +23,7 @@ export default function ServiciosPage() {
       <PageHero
         eyebrow="Servicios"
         breadcrumb="Servicios"
-        title={<>Todo lo que tu viaje necesita, <em className="italic text-gold-light">en un solo lugar</em></>}
+        title={<>Todo lo que tu viaje necesita, <span className="text-gold-light">en un solo lugar</span></>}
         intro="Diseñamos, coordinamos y operamos cada pieza de la experiencia para que tú solo te ocupes de disfrutarla."
         // TODO: reemplazar con foto real de servicios Kastell
         image={{ src: "/images/servicio-gastronomia.jpg", alt: "Mesa de cena elegante con platos gourmet" }}
@@ -35,7 +35,7 @@ export default function ServiciosPage() {
         <div className="container">
           <SectionHeading
             eyebrow="Lo que hacemos"
-            title={<>Nueve servicios, <em className="italic text-gold-deep">un mismo estándar</em></>}
+            title={<>Nueve servicios, <span className="text-gold-deep">un mismo estándar</span></>}
             intro="Puedes contratarlos por separado o dejar que los integremos en una sola experiencia coordinada de principio a fin."
           />
           <ul className="mt-16 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -46,7 +46,7 @@ export default function ServiciosPage() {
                     <span className="grid h-14 w-14 place-items-center rounded-full bg-ivory-deep">
                       <DynamicIcon name={s.icon} className="h-6 w-6 text-gold-deep" />
                     </span>
-                    <span className="font-serif text-lg italic text-ink/30">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="font-serif text-lg text-ink/30">{String(i + 1).padStart(2, "0")}</span>
                   </div>
                   <h2 className="mt-8 font-serif text-[1.85rem] leading-tight">{s.title}</h2>
                   <p className="mt-3 leading-relaxed text-ink-muted">{s.description}</p>
@@ -71,7 +71,7 @@ export default function ServiciosPage() {
       <section className="section bg-ink text-ivory">
         <div className="container grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <SectionHeading tone="light" eyebrow="Nuestra diferencia" title={<>El lujo está en <em className="italic text-gold-light">cómo te hacemos sentir</em></>} />
+            <SectionHeading tone="light" eyebrow="Nuestra diferencia" title={<>El lujo está en <span className="text-gold-light">cómo te hacemos sentir</span></>} />
             <Reveal delay={0.1} className="relative mt-12 aspect-[4/3] overflow-hidden rounded-4xl">
               {/* TODO: reemplazar con foto real */}
               <Image src="/images/servicio-bienestar.jpg" alt="Tratamiento de spa y bienestar" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
