@@ -38,7 +38,7 @@ export function Offer() {
                     <DynamicIcon name={p.icon} className="h-6 w-6 text-ink" strokeWidth={1.8} />
                   </span>
                   <p className="text-xs font-semibold uppercase tracking-eyebrow text-gold-light">{p.subtitle}</p>
-                  <h3 className="mt-2 font-serif text-2xl md:text-3xl">
+                  <h3 className="mt-2 font-serif text-xl md:text-2xl">
                     <Link href={p.href} className="after:absolute after:inset-0">{p.title}</Link>
                   </h3>
                   <p className="mt-3 max-w-md text-[0.95rem] leading-relaxed text-ivory/80">{p.description}</p>

@@ -31,7 +31,7 @@ export function Hero() {
             <br />
             <span className="font-light text-ivory">experiencias</span> únicas
           </h1>
-          <p className="mt-8 max-w-xl text-base leading-relaxed md:text-[1.05rem] text-ivory/85 md:text-xl">{site.promise}</p>
+          <p className="mt-8 max-w-xl text-[0.95rem] leading-relaxed text-ivory/85 md:text-xl">{site.promise}</p>
           <div className="mt-10 flex flex-wrap gap-3">
             <WhatsAppButton message={waMessages.hero} className="px-7 py-4">
               Diseñemos tu viaje
@@ -43,7 +43,7 @@ export function Hero() {
         </div>
 
         {/* Tarjeta flotante: experiencia destacada */}
-        <div className="hidden lg:col-span-4 lg:block lg:pb-10">
+        <div className="hidden lg:col-span-4 lg:block lg:pb-20 xl:pb-10">
           <Link
             href={`/experiencias/${featuredPackage.slug}`}
             className="group ml-auto flex max-w-sm items-center gap-4 rounded-3xl border border-ivory/20 bg-ink/45 p-3 pr-5 backdrop-blur-md transition hover:bg-ink/60"
@@ -53,7 +53,7 @@ export function Hero() {
             </span>
             <span className="flex-1">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-light">Experiencia destacada</span>
-              <span className="mt-1 block font-serif text-xl leading-tight">{featuredPackage.title}</span>
+              <span className="mt-1 block font-serif text-base leading-tight">{featuredPackage.title}</span>
               <span className="mt-1 block text-xs text-ivory/70">
                 {featuredPackage.durationDays} días / {featuredPackage.durationNights} noches
               </span>
