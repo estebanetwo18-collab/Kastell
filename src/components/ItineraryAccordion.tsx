@@ -39,7 +39,7 @@ export function ItineraryAccordion({ days, tone = "light", defaultOpen = 0 }: { 
               >
                 <span className={cn("w-20 shrink-0 text-xs font-semibold uppercase tracking-[0.2em] md:w-24", dark ? "text-gold-light" : "text-gold-deep")}>{d.label}</span>
                 <span className="flex-1">
-                  <span className={cn("block font-serif text-xl leading-snug md:text-2xl", dark ? "text-ivory" : "text-ink")}>{d.title}</span>
+                  <span className={cn("block font-serif text-lg leading-snug md:text-xl", dark ? "text-ivory" : "text-ink")}>{d.title}</span>
                   <span className={cn("mt-1 inline-flex items-center gap-1.5 text-xs", dark ? "text-ivory/60" : "text-stone")}>
                     <MapPin className="h-3 w-3" aria-hidden /> {d.location}
                   </span>

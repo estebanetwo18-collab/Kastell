@@ -32,7 +32,7 @@ export function PageHero({
         </nav>
         <p className="eyebrow mb-6 text-gold-light">{eyebrow}</p>
         <h1 className="max-w-5xl text-display-lg">{title}</h1>
-        {intro && <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ivory/80">{intro}</p>}
+        {intro && <p className="mt-7 max-w-2xl text-base leading-relaxed md:text-[1.05rem] text-ivory/80">{intro}</p>}
         {children && <div className="mt-10 flex flex-wrap gap-3">{children}</div>}
       </div>
     </section>

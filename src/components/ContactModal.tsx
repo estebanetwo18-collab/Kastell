@@ -85,7 +85,7 @@ export function ContactProvider({ children }: { children: React.ReactNode }) {
                   <X className="h-5 w-5" aria-hidden />
                 </button>
                 <p className="eyebrow mb-4 text-gold-deep">Cotiza tu experiencia</p>
-                <h2 id="contact-modal-title" className="mb-2 font-serif text-4xl">Empecemos a planear tu viaje</h2>
+                <h2 id="contact-modal-title" className="mb-2 font-serif text-3xl">Empecemos a planear tu viaje</h2>
                 <p className="mb-8 text-ink-muted">Cuéntanos tu idea y te respondemos con una propuesta pensada para ti.</p>
                 <ContactForm compact defaultExperience={opts.experience} packageName={opts.packageName} onDone={close} />
               </motion.div>

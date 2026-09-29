@@ -29,7 +29,7 @@ export function FeaturedExperience() {
               <Image src={pkg.image.src} alt={pkg.image.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
               <div className="absolute inset-x-4 bottom-4 rounded-3xl bg-ink/70 p-6 backdrop-blur-md">
                 <p className="text-xs uppercase tracking-[0.2em] text-ivory/70">Desde</p>
-                <p className="font-serif text-5xl text-ivory">
+                <p className="font-serif text-4xl text-ivory">
                   {formatPrice(pkg.priceFrom!)} <span className="font-sans text-sm text-ivory/70">por persona</span>
                 </p>
                 <p className="mt-2 text-xs leading-relaxed text-ivory/60">{pkg.priceNote}</p>
@@ -51,7 +51,7 @@ export function FeaturedExperience() {
                   ))}
                 </ul>
               </div>
-              <p className="mt-8 text-lg leading-relaxed text-ivory/75">{pkg.summary}</p>
+              <p className="mt-8 text-base leading-relaxed md:text-[1.05rem] text-ivory/75">{pkg.summary}</p>
             </Reveal>
             <Reveal delay={0.1} className="mt-10">
               <ItineraryAccordion days={pkg.itinerary!} tone="dark" />

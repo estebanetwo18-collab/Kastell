@@ -15,7 +15,7 @@ export function Difference() {
               <h2 className="text-display-md">
                 Lo que no se ve, <span className="text-gold-deep">se siente</span>
               </h2>
-              <p className="mt-6 text-lg leading-relaxed text-ink-muted">
+              <p className="mt-6 text-base leading-relaxed md:text-[1.05rem] text-ink-muted">
                 Un gran viaje se construye con cientos de decisiones bien tomadas. Estas son las que nos definen.
               </p>
               <WhatsAppButton message={waMessages.difference} variant="ink" className="mt-10">
@@ -33,7 +33,7 @@ export function Difference() {
                 </span>
                 <span className="font-serif text-lg text-ink/30">0{i + 1}</span>
               </div>
-              <h3 className="mt-10 font-serif text-2xl leading-snug md:text-[1.7rem]">{d.title}</h3>
+              <h3 className="mt-10 font-serif text-xl leading-snug md:text-[1.35rem]">{d.title}</h3>
               <p className="mt-3 leading-relaxed text-ink-muted">{d.description}</p>
             </Reveal>
           ))}

@@ -27,7 +27,7 @@ export function SectionHeading({
       )}
       <Tag className={cn("text-display-md", tone === "light" ? "text-ivory" : "text-ink")}>{title}</Tag>
       {intro && (
-        <p className={cn("mt-6 text-lg leading-relaxed", tone === "light" ? "text-ivory/75" : "text-ink-muted")}>{intro}</p>
+        <p className={cn("mt-6 text-base leading-relaxed md:text-[1.05rem]", tone === "light" ? "text-ivory/75" : "text-ink-muted")}>{intro}</p>
       )}
     </Reveal>
   );

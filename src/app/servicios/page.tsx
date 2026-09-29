@@ -48,7 +48,7 @@ export default function ServiciosPage() {
                     </span>
                     <span className="font-serif text-lg text-ink/30">{String(i + 1).padStart(2, "0")}</span>
                   </div>
-                  <h2 className="mt-8 font-serif text-[1.85rem] leading-tight">{s.title}</h2>
+                  <h2 className="mt-8 font-serif text-xl md:text-2xl leading-tight">{s.title}</h2>
                   <p className="mt-3 leading-relaxed text-ink-muted">{s.description}</p>
                   <ul className="mt-6 flex-1 space-y-2.5 text-sm">
                     {s.details.map((d) => (

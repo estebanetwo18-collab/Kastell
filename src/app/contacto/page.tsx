@@ -86,7 +86,7 @@ export default function ContactoPage() {
 
           <Reveal delay={0.1} className="lg:col-span-8">
             <div className="rounded-4xl bg-white/60 p-7 shadow-soft ring-1 ring-ink/5 sm:p-12">
-              <h2 className="font-serif text-4xl">Cuéntanos tu idea</h2>
+              <h2 className="font-serif text-3xl">Cuéntanos tu idea</h2>
               <p className="mb-10 mt-2 text-ink-muted">Todos los campos son necesarios, excepto la fecha.</p>
               <Suspense>
                 <ContactPageForm />

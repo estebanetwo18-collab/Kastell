@@ -6,7 +6,7 @@ export function ValuesMarquee() {
     <div className="overflow-hidden border-y border-ink/10 bg-ivory py-6" aria-label={`Nuestros valores: ${row.join(", ")}`}>
       <div className="flex w-max animate-marquee gap-12 motion-reduce:animate-none" aria-hidden>
         {[...row, ...row, ...row, ...row].map((v, i) => (
-          <span key={i} className="flex items-center gap-12 font-serif text-xl font-light uppercase tracking-[0.3em] text-ink/80 md:text-2xl">
+          <span key={i} className="flex items-center gap-12 font-serif text-base font-light uppercase tracking-[0.3em] text-ink/80 md:text-xl">
             {v}
             <span className="h-1.5 w-1.5 rotate-45 bg-gold" />
           </span>

@@ -44,7 +44,7 @@ export function PackageCard({ pkg, className }: { pkg: ExperiencePackage; classN
       </Link>
       <div className="flex flex-1 flex-col p-7">
         <p className="text-xs font-semibold uppercase tracking-eyebrow text-gold-deep">{pkg.eyebrow}</p>
-        <h3 className="mt-3 font-serif text-[1.75rem] leading-tight text-ink">
+        <h3 className="mt-3 font-serif text-xl md:text-2xl leading-tight text-ink">
           <Link href={href} className="after:absolute after:inset-0 focus:outline-none">
             {pkg.title}
           </Link>

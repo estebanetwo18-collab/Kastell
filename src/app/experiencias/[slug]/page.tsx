@@ -129,7 +129,7 @@ export default function PackagePage({ params }: Props) {
               {pkg.priceFrom && (
                 <>
                   <p className="text-xs uppercase tracking-[0.2em] text-ivory/60">Desde</p>
-                  <p className="mt-1 font-serif text-6xl">{formatPrice(pkg.priceFrom)}</p>
+                  <p className="mt-1 font-serif text-5xl">{formatPrice(pkg.priceFrom)}</p>
                   <p className="mt-1 text-sm text-ivory/70">por persona</p>
                   <p className="mt-4 text-xs leading-relaxed text-ivory/55">{pkg.priceNote}</p>
                 </>

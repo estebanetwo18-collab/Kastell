@@ -230,7 +230,7 @@ export function Header() {
                     <Link
                       href={item.href}
                       aria-current={isActive(item.href) ? "page" : undefined}
-                      className={cn("block border-b border-ink/10 py-4 font-serif text-3xl", isActive(item.href) ? "text-gold-deep" : "text-ink")}
+                      className={cn("block border-b border-ink/10 py-4 font-serif text-2xl", isActive(item.href) ? "text-gold-deep" : "text-ink")}
                     >
                       {item.label}
                     </Link>

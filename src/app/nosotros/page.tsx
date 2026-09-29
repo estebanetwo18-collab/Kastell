@@ -46,7 +46,7 @@ export default function NosotrosPage() {
               <Image src="/images/nosotros-historia.jpg" alt="Mapa, libreta y cámara listos para planear un viaje" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
             </Reveal>
           </div>
-          <div className="space-y-7 text-lg leading-relaxed text-ink-muted lg:col-span-6 lg:col-start-7 lg:pt-24">
+          <div className="space-y-7 text-base leading-relaxed md:text-[1.05rem] text-ink-muted lg:col-span-6 lg:col-start-7 lg:pt-24">
             {story.map((p, i) => (
               <Reveal key={i} delay={0.06 * i}>
                 <p className={i === 0 ? "font-serif text-3xl leading-snug text-ink" : ""}>{p}</p>
@@ -70,7 +70,7 @@ export default function NosotrosPage() {
           ].map((b, i) => (
             <Reveal key={b.label} delay={0.08 * i} className="rounded-4xl border border-ivory/15 p-8 md:p-12">
               <p className="eyebrow mb-8 text-gold-light">{b.label}</p>
-              <p className="font-serif text-[clamp(1.5rem,2.4vw,2.1rem)] leading-snug">{b.text}</p>
+              <p className="font-serif text-[clamp(1.25rem,1.9vw,1.65rem)] leading-snug">{b.text}</p>
             </Reveal>
           ))}
         </div>
@@ -121,7 +121,7 @@ export default function NosotrosPage() {
             ].map((a, i) => (
               <Reveal key={a.key} delay={0.08 * i} className="flex flex-col rounded-4xl bg-ivory p-8 md:p-12">
                 <p className="text-xs font-semibold uppercase tracking-eyebrow text-gold-deep">{a.key.toUpperCase()}</p>
-                <h3 className="mt-3 font-serif text-4xl">{a.title}</h3>
+                <h3 className="mt-3 font-serif text-3xl">{a.title}</h3>
                 <p className="mt-4 leading-relaxed text-ink-muted">{a.intro}</p>
                 <ul className="mt-8 flex-1 space-y-3">
                   {a.items.map((it) => (

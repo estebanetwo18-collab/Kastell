@@ -31,7 +31,7 @@ export function Hero() {
             <br />
             <span className="font-light text-ivory">experiencias</span> únicas
           </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-ivory/85 md:text-xl">{site.promise}</p>
+          <p className="mt-8 max-w-xl text-base leading-relaxed md:text-[1.05rem] text-ivory/85 md:text-xl">{site.promise}</p>
           <div className="mt-10 flex flex-wrap gap-3">
             <WhatsAppButton message={waMessages.hero} className="px-7 py-4">
               Diseñemos tu viaje

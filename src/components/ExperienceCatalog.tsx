@@ -104,7 +104,7 @@ export function ExperienceCatalog() {
                 <p className="text-xs font-semibold uppercase tracking-eyebrow text-gold-light">
                   {results.length ? "Tailor-Made" : "Sin resultados… todavía"}
                 </p>
-                <h3 className="mt-4 font-serif text-4xl leading-tight">
+                <h3 className="mt-4 font-serif text-3xl leading-tight">
                   {results.length ? "¿No ves tu viaje ideal? Lo diseñamos para ti." : "Esa combinación aún no está publicada, pero la diseñamos para ti."}
                 </h3>
                 <p className="mt-4 leading-relaxed text-ivory/75">

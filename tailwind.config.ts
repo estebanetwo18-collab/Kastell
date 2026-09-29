@@ -33,10 +33,10 @@ const config: Config = {
         accent: ["var(--font-accent)", "Georgia", "serif"],
       },
       fontSize: {
-        "display-xl": ["clamp(3rem, 7.5vw, 7.25rem)", { lineHeight: "0.98", letterSpacing: "-0.02em" }],
-        "display-lg": ["clamp(2.5rem, 5.5vw, 5rem)", { lineHeight: "1.02", letterSpacing: "-0.015em" }],
-        "display-md": ["clamp(2rem, 4vw, 3.5rem)", { lineHeight: "1.06", letterSpacing: "-0.01em" }],
-        "display-sm": ["clamp(1.6rem, 2.6vw, 2.25rem)", { lineHeight: "1.12" }],
+        "display-xl": ["clamp(2.5rem, 6vw, 5.5rem)", { lineHeight: "0.98", letterSpacing: "-0.02em" }],
+        "display-lg": ["clamp(2.1rem, 4.4vw, 3.9rem)", { lineHeight: "1.02", letterSpacing: "-0.015em" }],
+        "display-md": ["clamp(1.75rem, 3.2vw, 2.75rem)", { lineHeight: "1.06", letterSpacing: "-0.01em" }],
+        "display-sm": ["clamp(1.4rem, 2.2vw, 1.85rem)", { lineHeight: "1.12" }],
       },
       letterSpacing: { eyebrow: "0.28em" },
       boxShadow: {

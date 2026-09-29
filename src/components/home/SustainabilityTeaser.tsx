@@ -24,7 +24,7 @@ export function SustainabilityTeaser() {
               <h2 className="text-display-md">
                 Viajar bonito es también <span className="text-gold-light">viajar bien</span>
               </h2>
-              <p className="mt-6 max-w-lg text-lg leading-relaxed text-ivory/80">
+              <p className="mt-6 max-w-lg text-base leading-relaxed md:text-[1.05rem] text-ivory/80">
                 Contamos con una política de sostenibilidad formal que guía cómo operamos y con quién trabajamos. Porque el lujo verdadero cuida el lugar que lo hace posible.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-5">
