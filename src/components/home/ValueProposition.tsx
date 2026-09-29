@@ -41,7 +41,7 @@ export function ValueProposition() {
                 Creando viajes que se recuerdan{" "}
                 <span className="text-gold-deep">desde 2021</span>
               </h2>
-              <p className="mt-7 text-[0.95rem] leading-relaxed text-ink-muted">
+              <p className="mt-7 text-[0.9rem] leading-relaxed text-ink-muted">
                 Nacimos en San José con una idea sencilla y ambiciosa: combinar
                 el arte de viajar con la excelencia en el servicio. Diseñamos,
                 coordinamos y operamos experiencias en todo Costa Rica para
@@ -93,7 +93,7 @@ export function ValueProposition() {
               <p className="font-accent text-lg font-light md:text-xl italic leading-snug text-ivory/90">
                 “Mari, gracias por todo, jamás vamos a olvidar este día.”
               </p>
-              <cite className="mt-3 block text-base not-italic text-ivory/60">
+              <cite className="mt-3 block text-base not-italic text-ivory/80">
                 Javier Álvarez, cliente · Recomendación en Facebook
               </cite>
             </blockquote>

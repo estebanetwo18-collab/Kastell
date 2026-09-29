@@ -14,14 +14,15 @@ import { ContactButton } from "@/components/ContactModal";
 import { FinalCTA } from "@/components/FinalCTA";
 import { formatPrice } from "@/components/PackageCard";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return itineraryPackages.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const pkg = getPackage(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const pkg = getPackage(slug);
   if (!pkg) return {};
   return pageMetadata({
     title: `${pkg.title} · ${pkg.durationDays} días / ${pkg.durationNights} noches`,
@@ -31,8 +32,9 @@ export function generateMetadata({ params }: Props): Metadata {
   });
 }
 
-export default function PackagePage({ params }: Props) {
-  const pkg = getPackage(params.slug);
+export default async function PackagePage({ params }: Props) {
+  const { slug } = await params;
+  const pkg = getPackage(slug);
   if (!pkg || !pkg.itinerary) notFound();
 
   const jsonLd = {

@@ -15,7 +15,7 @@ export function Difference() {
               <h2 className="text-display-md">
                 Lo que no se ve, <span className="text-gold-deep">se siente</span>
               </h2>
-              <p className="mt-6 text-[0.95rem] leading-relaxed text-ink-muted">
+              <p className="mt-6 text-[0.9rem] leading-relaxed text-ink-muted">
                 Un gran viaje se construye con cientos de decisiones bien tomadas. Estas son las que nos definen.
               </p>
               <WhatsAppButton message={waMessages.difference} variant="ink" className="mt-10">
@@ -31,7 +31,7 @@ export function Difference() {
                 <span className="grid h-14 w-14 place-items-center rounded-full bg-jungle transition-transform duration-500 group-hover:-translate-y-1">
                   <DynamicIcon name={d.icon} className="h-6 w-6 text-gold-light" strokeWidth={1.8} />
                 </span>
-                <span className="font-serif text-lg text-ink/30">0{i + 1}</span>
+                <span className="font-serif text-lg text-gold-deep" aria-hidden>0{i + 1}</span>
               </div>
               <h3 className="mt-10 font-serif text-xl leading-snug md:text-[1.35rem]">{d.title}</h3>
               <p className="mt-3 leading-relaxed text-ink-muted">{d.description}</p>

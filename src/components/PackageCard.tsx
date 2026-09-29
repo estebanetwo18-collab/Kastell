@@ -56,7 +56,7 @@ export function PackageCard({ pkg, className }: { pkg: ExperiencePackage; classN
             </li>
           ))}
         </ul>
-        <p className="mt-5 flex-1 text-[0.95rem] leading-relaxed text-ink-muted">{pkg.summary}</p>
+        <p className="mt-5 flex-1 text-[0.9rem] leading-relaxed text-ink-muted">{pkg.summary}</p>
         <div className="relative z-10 mt-7 flex flex-wrap items-center gap-3">
           <Link href={href} className="btn-ink px-5 py-3">
             Explorar <ArrowUpRight className="h-4 w-4" aria-hidden />

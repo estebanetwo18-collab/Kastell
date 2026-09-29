@@ -46,7 +46,7 @@ export default function NosotrosPage() {
               <Image src="/images/nosotros-historia.jpg" alt="Mapa, libreta y cámara listos para planear un viaje" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
             </Reveal>
           </div>
-          <div className="space-y-7 text-[0.95rem] leading-relaxed text-ink-muted lg:col-span-6 lg:col-start-7 lg:pt-24">
+          <div className="space-y-7 text-[0.9rem] leading-relaxed text-ink-muted lg:col-span-6 lg:col-start-7 lg:pt-24">
             {story.map((p, i) => (
               <Reveal key={i} delay={0.06 * i}>
                 <p className={i === 0 ? "font-serif text-3xl leading-snug text-ink" : ""}>{p}</p>

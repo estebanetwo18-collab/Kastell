@@ -165,7 +165,7 @@ export function ContactForm({
       </div>
       <div>
         <label htmlFor={`${uid}-date`} className={labelCls}>
-          Fecha tentativa <span className="normal-case tracking-normal opacity-70">(opcional)</span>
+          Fecha tentativa <span className="normal-case tracking-normal">(opcional)</span>
         </label>
         <input {...fieldProps("date")} type="text" enterKeyHint="next" className={fieldCls} placeholder="Ej. marzo 2027" />
       </div>
@@ -185,7 +185,7 @@ export function ContactForm({
         </button>
         <p className={cn("text-xs leading-relaxed", dark ? "text-ivory/60" : "text-stone")}>
           ¿Prefieres hablar ya? WhatsApp{" "}
-          <a href={waLink("Hola Kastell, les escribo desde el formulario de su sitio web.")} target="_blank" rel="noopener noreferrer" className={cn("tap-target font-semibold underline underline-offset-4", dark ? "text-gold-light" : "text-gold-deep")}>
+          <a href={waLink("Hola Kastell, les escribo desde el formulario de su sitio web.")} target="_blank" rel="noopener noreferrer" className={cn("tap-target inline-block whitespace-nowrap font-semibold underline underline-offset-4", dark ? "text-gold-light" : "text-gold-deep")}>
             {site.whatsapp.display}
           </a>
         </p>

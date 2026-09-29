@@ -1,7 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { waMessages } from "@/lib/whatsapp";
+import type { Metadata } from "next";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+
+export const metadata: Metadata = {
+  title: "Página no encontrada",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (

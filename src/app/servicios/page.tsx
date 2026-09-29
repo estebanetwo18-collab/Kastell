@@ -46,7 +46,7 @@ export default function ServiciosPage() {
                     <span className="grid h-14 w-14 place-items-center rounded-full bg-jungle">
                       <DynamicIcon name={s.icon} className="h-6 w-6 text-gold-light" strokeWidth={1.8} />
                     </span>
-                    <span className="font-serif text-lg text-ink/30">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="font-serif text-lg text-gold-deep" aria-hidden>{String(i + 1).padStart(2, "0")}</span>
                   </div>
                   <h2 className="mt-8 font-serif text-xl md:text-2xl leading-tight">{s.title}</h2>
                   <p className="mt-3 leading-relaxed text-ink-muted">{s.description}</p>

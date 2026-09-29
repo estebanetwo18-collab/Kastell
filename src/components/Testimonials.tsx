@@ -34,7 +34,7 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
             </span>
             <span>
               <span className="block font-semibold text-ivory">{t.author}</span>
-              <span className="text-sm text-ivory/60">
+              <span className="text-sm text-ivory/80">
                 {t.source}
                 {t.context ? ` · ${t.context}` : ""}
               </span>

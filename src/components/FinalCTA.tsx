@@ -25,7 +25,7 @@ export function FinalCTA({
         <Reveal className="lg:col-span-5">
           <p className="eyebrow mb-6 text-gold-light">Empecemos a planear</p>
           <h2 className="text-display-lg text-ivory">{title}</h2>
-          <p className="mt-6 max-w-md text-[0.95rem] leading-relaxed text-ivory/75">{intro}</p>
+          <p className="mt-6 max-w-md text-[0.9rem] leading-relaxed text-ivory/75">{intro}</p>
           <div className="mt-10 flex flex-col items-start gap-4">
             <WhatsAppButton message={whatsappMessage} className="px-7 py-4 text-base" iconSize={22}>
               Escríbenos al {site.whatsapp.display}

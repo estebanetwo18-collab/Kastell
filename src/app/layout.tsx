@@ -19,8 +19,8 @@ const montserrat = Montserrat({
 // Acento puntual (citas y testimonios): serif suave y moderna.
 const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["300", "400"],
-  style: ["normal", "italic"],
+  weight: ["300"],
+  style: ["italic"],
   variable: "--font-accent",
   display: "swap",
 });

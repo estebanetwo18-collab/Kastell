@@ -87,7 +87,7 @@ export default function BodasEventosPage() {
           <ol className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
             {weddingSteps.map((s, i) => (
               <Reveal as="li" key={s.title} delay={0.06 * i} className="rounded-4xl border border-ink/10 bg-white/50 p-8">
-                <span className="font-serif text-4xl text-gold">0{i + 1}</span>
+                <span className="font-serif text-4xl text-gold-deep">0{i + 1}</span>
                 <h3 className="mt-6 font-serif text-2xl">{s.title}</h3>
                 <p className="mt-2 leading-relaxed text-ink-muted">{s.text}</p>
               </Reveal>

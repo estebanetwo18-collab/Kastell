@@ -19,7 +19,7 @@ const config: Config = {
         ivory: { DEFAULT: "#F6F1E9", deep: "#EDE5D8", line: "#DDD3C3" },
         gold: {
           DEFAULT: "#B08D57", // decorativo, fondos de botón (texto ink encima)
-          light: "#C9A874", // texto dorado sobre fondos oscuros (AA)
+          light: "#D6BA8A", // texto dorado sobre fondos oscuros (AA ≥4.5 sobre ink y jungle)
           deep: "#7D5F33", // texto dorado sobre fondos claros (AA)
         },
         jungle: { DEFAULT: "#3A4A3C", deep: "#2C382E", mist: "#DDE2D6" },
@@ -32,11 +32,23 @@ const config: Config = {
         sans: ["var(--font-main)", "system-ui", "sans-serif"],
         accent: ["var(--font-accent)", "Georgia", "serif"],
       },
+      // Escala de texto compacta (≈6–12 % menor que la de Tailwind por defecto).
+      // Los campos de formulario usan 16px fijos para evitar el zoom automático de iOS.
       fontSize: {
-        "display-xl": ["clamp(2.2rem, 4.6vw, 4.4rem)", { lineHeight: "0.98", letterSpacing: "-0.02em" }],
-        "display-lg": ["clamp(1.85rem, 3.5vw, 3.2rem)", { lineHeight: "1.02", letterSpacing: "-0.015em" }],
-        "display-md": ["clamp(1.55rem, 2.6vw, 2.3rem)", { lineHeight: "1.06", letterSpacing: "-0.01em" }],
-        "display-sm": ["clamp(1.25rem, 1.8vw, 1.55rem)", { lineHeight: "1.12" }],
+        xs: ["0.72rem", { lineHeight: "1.05rem" }],
+        sm: ["0.82rem", { lineHeight: "1.25rem" }],
+        base: ["0.94rem", { lineHeight: "1.5rem" }],
+        lg: ["1.03rem", { lineHeight: "1.6rem" }],
+        xl: ["1.15rem", { lineHeight: "1.65rem" }],
+        "2xl": ["1.35rem", { lineHeight: "1.8rem" }],
+        "3xl": ["1.65rem", { lineHeight: "2.05rem" }],
+        "4xl": ["2rem", { lineHeight: "2.35rem" }],
+        "5xl": ["2.5rem", { lineHeight: "1" }],
+        "6xl": ["3rem", { lineHeight: "1" }],
+        "display-xl": ["clamp(2rem, 4.1vw, 3.9rem)", { lineHeight: "0.98", letterSpacing: "-0.02em" }],
+        "display-lg": ["clamp(1.7rem, 3.1vw, 2.8rem)", { lineHeight: "1.02", letterSpacing: "-0.015em" }],
+        "display-md": ["clamp(1.45rem, 2.3vw, 2rem)", { lineHeight: "1.06", letterSpacing: "-0.01em" }],
+        "display-sm": ["clamp(1.2rem, 1.6vw, 1.4rem)", { lineHeight: "1.12" }],
       },
       letterSpacing: { eyebrow: "0.28em" },
       boxShadow: {

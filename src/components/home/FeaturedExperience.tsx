@@ -51,7 +51,7 @@ export function FeaturedExperience() {
                   ))}
                 </ul>
               </div>
-              <p className="mt-8 text-[0.95rem] leading-relaxed text-ivory/75">{pkg.summary}</p>
+              <p className="mt-8 text-[0.9rem] leading-relaxed text-ivory/75">{pkg.summary}</p>
             </Reveal>
             <Reveal delay={0.1} className="mt-10">
               <ItineraryAccordion days={pkg.itinerary!} tone="dark" />

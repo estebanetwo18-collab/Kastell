@@ -41,7 +41,7 @@ export function Offer() {
                   <h3 className="mt-2 font-serif text-xl md:text-2xl">
                     <Link href={p.href} className="after:absolute after:inset-0">{p.title}</Link>
                   </h3>
-                  <p className="mt-3 max-w-md text-[0.95rem] leading-relaxed text-ivory/80">{p.description}</p>
+                  <p className="mt-3 max-w-md text-[0.9rem] leading-relaxed text-ivory/80">{p.description}</p>
                   <div className="relative z-10 mt-6">
                     <WhatsAppButton message={p.whatsappMessage} variant="ghost-light" className="px-5 py-2.5 text-[0.8rem]" iconSize={16}>
                       Consultar por WhatsApp

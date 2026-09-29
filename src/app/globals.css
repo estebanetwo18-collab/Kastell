@@ -95,7 +95,7 @@
     @apply inline-flex items-center gap-1.5 rounded-full border border-ink/15 px-3 py-1 text-xs font-medium text-ink-muted;
   }
   .field {
-    @apply w-full rounded-xl border border-ink/15 bg-white/70 px-4 py-3.5 text-base text-ink placeholder:text-stone/70 transition focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold/30;
+    @apply w-full rounded-xl border border-ink/15 bg-white/70 px-4 py-3.5 text-[16px] text-ink placeholder:text-stone/70 transition focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold/30;
   }
   /* Amplía el área táctil de enlaces pequeños (íconos, enlaces de texto) a 44×44 */
   .tap-target {
