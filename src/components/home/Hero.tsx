@@ -12,21 +12,21 @@ export function Hero() {
       {/* TODO: reemplazar con foto (o video) real del hero — naturaleza costarricense de lujo */}
       <Image
         src="/images/hero.jpg"
-        alt="Río turquesa entre palmeras en la selva tropical de Costa Rica"
+        alt="Viajera con los brazos abiertos en una playa de arena blanca frente a un islote tropical"
         fill
         priority
         sizes="100vw"
         className="-z-10 animate-slow-zoom object-cover"
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/30 to-ink/40" aria-hidden />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/75 via-ink/25 to-transparent" aria-hidden />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/45 to-ink/25 lg:from-ink/80 lg:via-ink/5 lg:to-ink/35" aria-hidden />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/60 via-ink/10 to-transparent lg:from-ink/65" aria-hidden />
 
       <div className="container grid gap-12 pb-24 pt-40 md:pb-28 lg:grid-cols-12 lg:items-end lg:pb-32">
         <div className="lg:col-span-8">
           <p className="eyebrow mb-7 text-ivory [text-shadow:0_1px_12px_rgba(20,19,16,0.6)]">
             Destination Management Company · Costa Rica
           </p>
-          <h1 className="text-display-xl text-gold-light [text-shadow:0_2px_24px_rgba(20,19,16,0.45)]">
+          <h1 className="text-display-xl text-gold-light [text-shadow:0_2px_28px_rgba(20,19,16,0.6)]">
             El arte de crear
             <br />
             <span className="font-light text-ivory">experiencias</span> únicas
@@ -46,7 +46,7 @@ export function Hero() {
         <div className="hidden lg:col-span-4 lg:block lg:pb-10">
           <Link
             href={`/experiencias/${featuredPackage.slug}`}
-            className="group ml-auto flex max-w-sm items-center gap-4 rounded-3xl border border-ivory/15 bg-ivory/10 p-3 pr-5 backdrop-blur-md transition hover:bg-ivory/20"
+            className="group ml-auto flex max-w-sm items-center gap-4 rounded-3xl border border-ivory/20 bg-ink/45 p-3 pr-5 backdrop-blur-md transition hover:bg-ink/60"
           >
             <span className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl">
               <Image src={featuredPackage.image.src} alt="" fill sizes="96px" className="object-cover transition duration-700 group-hover:scale-110" />
