@@ -41,7 +41,7 @@ export function ValueProposition() {
                 Creando viajes que se recuerdan{" "}
                 <span className="text-gold-deep">desde 2021</span>
               </h2>
-              <p className="mt-7 text-xl leading-relaxed text-ink-muted">
+              <p className="mt-7 text-lg leading-relaxed text-ink-muted">
                 Nacimos en San José con una idea sencilla y ambiciosa: combinar
                 el arte de viajar con la excelencia en el servicio. Diseñamos,
                 coordinamos y operamos experiencias en todo Costa Rica para
@@ -90,7 +90,7 @@ export function ValueProposition() {
               Kastell.
             </h3>
             <blockquote className="mt-8 max-w-lg">
-              <p className="text-2xl italic leading-snug text-ivory/90">
+              <p className="font-accent text-2xl font-light italic leading-snug text-ivory/90">
                 “Mari, gracias por todo, jamás vamos a olvidar este día.”
               </p>
               <cite className="mt-3 block text-base not-italic text-ivory/60">

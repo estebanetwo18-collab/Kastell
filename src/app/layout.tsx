@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Fraunces, Montserrat } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import { Header } from "@/components/Header";
@@ -8,19 +8,20 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { ContactProvider } from "@/components/ContactModal";
 import { pillars } from "@/content";
 
-// Títulos: Manrope · Textos y subtítulos: Cormorant Garamond
-const display = Manrope({
+// Tipografía principal: Montserrat en todas sus variaciones (títulos, textos, botones).
+const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-display",
+  variable: "--font-main",
   display: "swap",
 });
 
-const text = Cormorant_Garamond({
+// Acento puntual (citas y testimonios): serif suave y moderna.
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400"],
   style: ["normal", "italic"],
-  variable: "--font-text",
+  variable: "--font-accent",
   display: "swap",
 });
 
@@ -99,7 +100,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es-CR" className={`${display.variable} ${text.variable}`}>
+    <html lang="es-CR" className={`${montserrat.variable} ${fraunces.variable}`}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <ContactProvider>

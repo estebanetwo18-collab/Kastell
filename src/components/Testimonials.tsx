@@ -25,7 +25,7 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
           aria-roledescription="diapositiva"
           aria-label={`${i + 1} de ${items.length}`}
         >
-          <blockquote className="mt-8 font-serif text-[clamp(1.6rem,3.2vw,2.75rem)] leading-[1.2] text-ivory">
+          <blockquote className="mt-8 font-accent text-[clamp(1.6rem,3.2vw,2.75rem)] font-light italic leading-[1.2] text-ivory">
             “{t.quote}”
           </blockquote>
           <figcaption className="mt-10 flex items-center gap-4">

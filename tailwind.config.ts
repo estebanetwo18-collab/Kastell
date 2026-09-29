@@ -26,10 +26,11 @@ const config: Config = {
         stone: { DEFAULT: "#6B6358" },
       },
       fontFamily: {
-        // `font-serif` = fuente de títulos, `font-sans` = fuente de textos/subtítulos.
-        // (Nombres históricos: hoy los títulos van en Manrope y los textos en Cormorant Garamond.)
-        serif: ["var(--font-display)", "system-ui", "sans-serif"],
-        sans: ["var(--font-text)", "Georgia", "serif"],
+        // Todo el sitio usa Montserrat. `font-serif` se mantiene como alias de títulos (misma fuente)
+        // para no tocar cada componente; `font-accent` (Fraunces) es solo para citas puntuales.
+        serif: ["var(--font-main)", "system-ui", "sans-serif"],
+        sans: ["var(--font-main)", "system-ui", "sans-serif"],
+        accent: ["var(--font-accent)", "Georgia", "serif"],
       },
       fontSize: {
         "display-xl": ["clamp(3rem, 7.5vw, 7.25rem)", { lineHeight: "0.98", letterSpacing: "-0.02em" }],
