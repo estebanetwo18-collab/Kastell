@@ -85,7 +85,7 @@ const jsonLd = {
   },
   areaServed: { "@type": "Country", name: "Costa Rica" },
   knowsLanguage: ["es"],
-  sameAs: [site.social.instagram, site.social.facebook],
+  sameAs: [site.social.instagram, site.social.facebook].filter(Boolean),
   contactPoint: {
     "@type": "ContactPoint",
     telephone: site.phone.display.replace(/\s/g, ""),

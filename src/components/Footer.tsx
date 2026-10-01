@@ -74,9 +74,11 @@ export function Footer() {
                   <MapPin className="h-4 w-4" aria-hidden /> {site.address.city}, {site.address.country}
                 </li>
                 <li className="flex gap-3 pt-2">
-                  <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kastell" className="grid h-11 w-11 place-items-center rounded-full border border-ivory/20 transition hover:border-gold hover:text-gold-light">
+                  {site.social.instagram && (
+                    <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kastell" className="grid h-11 w-11 place-items-center rounded-full border border-ivory/20 transition hover:border-gold hover:text-gold-light">
                     <InstagramIcon size={16} />
                   </a>
+                  )}
                   <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook de Kastell" className="grid h-11 w-11 place-items-center rounded-full border border-ivory/20 transition hover:border-gold hover:text-gold-light">
                     <FacebookIcon size={16} />
                   </a>

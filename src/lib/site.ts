@@ -13,8 +13,8 @@ export const site = {
   essence: "Lujo, creatividad y conexión: experiencias que permanecen en la memoria.",
   foundedYear: 2021,
   locale: "es-CR",
-  // TODO: confirmar el dominio definitivo con el cliente (también en .env: NEXT_PUBLIC_SITE_URL)
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.kastelltours.com").replace(/\/$/, ""),
+  // Dominio definitivo (también en Vercel: NEXT_PUBLIC_SITE_URL)
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://kastellcr.com").replace(/\/$/, ""),
   address: {
     city: "San José",
     country: "Costa Rica",
@@ -30,10 +30,9 @@ export const site = {
   },
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
   social: {
-    // TODO: pegar URL real de Instagram
-    instagram: "https://www.instagram.com/",
-    // TODO: pegar URL real de Facebook
-    facebook: "https://www.facebook.com/",
+    // Instagram: pegar la URL cuando exista. Si está vacío, el ícono no se muestra en el sitio.
+    instagram: "",
+    facebook: "https://www.facebook.com/share/1BvwFbvx1F/",
   },
   /**
    * Sellos de certificación / afiliación que se muestran en el footer.

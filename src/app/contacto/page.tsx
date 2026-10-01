@@ -21,7 +21,7 @@ export default function ContactoPage() {
     { icon: WhatsAppIcon, label: "WhatsApp", value: site.whatsapp.display, href: waLink(waMessages.contact), external: true },
     { icon: Phone, label: "Teléfono", value: site.phone.display, href: site.phone.href },
     ...(site.email ? [{ icon: Mail, label: "Correo", value: site.email, href: `mailto:${site.email}` }] : []),
-    { icon: InstagramIcon, label: "Instagram", value: "Síguenos en Instagram", href: site.social.instagram, external: true },
+    ...(site.social.instagram ? [{ icon: InstagramIcon, label: "Instagram", value: "Síguenos en Instagram", href: site.social.instagram, external: true }] : []),
     { icon: FacebookIcon, label: "Facebook", value: "Síguenos en Facebook", href: site.social.facebook, external: true },
   ];
 

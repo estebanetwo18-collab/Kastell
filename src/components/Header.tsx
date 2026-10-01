@@ -32,9 +32,11 @@ function TopBar({ hidden }: { hidden: boolean }) {
         {/* TODO: agregar sello de Tripadvisor / certificaciones cuando el cliente los tenga */}
         <p className="hidden text-ivory/60 lg:block">Destination Management Company · San José, Costa Rica · Desde {site.foundedYear}</p>
         <div className="-mr-3 flex items-center">
-          <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kastell" className="grid h-11 w-11 place-items-center transition hover:text-gold-light">
+          {site.social.instagram && (
+            <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kastell" className="grid h-11 w-11 place-items-center transition hover:text-gold-light">
             <InstagramIcon size={15} />
           </a>
+          )}
           <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook de Kastell" className="grid h-11 w-11 place-items-center transition hover:text-gold-light">
             <FacebookIcon size={15} />
           </a>
@@ -246,7 +248,9 @@ export function Header() {
                   <WhatsAppIcon size={18} /> Cotizar por WhatsApp
                 </a>
                 <div className="flex items-center justify-center gap-6 text-ink-muted">
-                  <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kastell" className="grid h-11 w-11 place-items-center"><InstagramIcon size={20} /></a>
+                  {site.social.instagram && (
+                    <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kastell" className="grid h-11 w-11 place-items-center"><InstagramIcon size={20} /></a>
+                  )}
                   <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook de Kastell" className="grid h-11 w-11 place-items-center"><FacebookIcon size={20} /></a>
                   <a href={site.phone.href} className="inline-flex min-h-[44px] items-center text-sm font-medium">{site.phone.display}</a>
                 </div>

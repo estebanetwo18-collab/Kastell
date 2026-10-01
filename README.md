@@ -205,7 +205,7 @@ Buscar `TODO` en el código para ver cada punto exacto.
 
 - [ ] Fotografías reales (hero, pilares, paquete, bodas/eventos, sostenibilidad, equipo).
 - [ ] Logo oficial en blanco para fondos oscuros.
-- [ ] URLs reales de Instagram y Facebook (`src/lib/site.ts`).
+- [ ] URL de Instagram (`src/lib/site.ts`, campo `social.instagram`); Facebook ya está configurado.
 - [ ] Dominio definitivo (`NEXT_PUBLIC_SITE_URL`) y Access Key de Web3Forms.
 - [ ] Logos de certificaciones (ICT, CST u otras) y sello de Tripadvisor si aplica.
 - [ ] Testimonios reales adicionales.
