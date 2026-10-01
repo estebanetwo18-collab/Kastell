@@ -5,19 +5,24 @@ import { site } from "@/lib/site";
 import { waMessages } from "@/lib/whatsapp";
 import { featuredPackage } from "@/content";
 import { WhatsAppButton } from "../WhatsAppButton";
+import { HeroCarousel, type HeroSlide } from "./HeroCarousel";
+
+// Fotos de experiencias Kastell. TODO: reemplazar con fotos reales del cliente.
+const heroSlides: HeroSlide[] = [
+  { src: "/images/hero.jpg", alt: "Viajera con los brazos abiertos en una playa de arena blanca frente a un islote tropical" },
+  { src: "/images/paquete-luna-de-miel.jpg", alt: "Luna de miel en Costa Rica" },
+  { src: "/images/monteverde-bosque.jpg", alt: "Bosque nuboso de Monteverde" },
+  { src: "/images/puentes-colgantes.jpg", alt: "Puentes colgantes sobre el bosque tropical" },
+  { src: "/images/resort-selva.jpg", alt: "Hotel boutique rodeado de selva tropical" },
+  { src: "/images/cta-playa.jpg", alt: "Playa tropical en Costa Rica" },
+  { src: "/images/paquetes/stock-cascada.jpg", alt: "Cascada rodeada de selva" },
+  { src: "/images/paquetes/stock-isla.jpg", alt: "Isla tropical" },
+];
 
 export function Hero() {
   return (
     <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-ink text-ivory">
-      {/* TODO: reemplazar con foto (o video) real del hero — naturaleza costarricense de lujo */}
-      <Image
-        src="/images/hero.jpg"
-        alt="Viajera con los brazos abiertos en una playa de arena blanca frente a un islote tropical"
-        fill
-        priority
-        sizes="100vw"
-        className="-z-10 animate-slow-zoom object-cover"
-      />
+      <HeroCarousel slides={heroSlides} />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/45 to-ink/25 lg:from-ink/80 lg:via-ink/5 lg:to-ink/35" aria-hidden />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/60 via-ink/10 to-transparent lg:from-ink/65" aria-hidden />
 
