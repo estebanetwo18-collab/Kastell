@@ -173,7 +173,7 @@ Incluye validación accesible y un campo *honeypot* anti-spam.
 
 ## 6. WhatsApp
 
-- Número oficial: **+506 6407 2932** (`src/lib/site.ts`).
+- Número oficial: **+506 7241 8210** (`src/lib/site.ts`).
 - Cada sección tiene su propio botón con un mensaje precargado diferente (`src/lib/whatsapp.ts`).
 - Botón flotante fijo en todas las páginas (`src/components/WhatsAppFloat.tsx`).
 

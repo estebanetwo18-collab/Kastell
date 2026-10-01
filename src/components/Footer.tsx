@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight, MapPin, Mail, Phone, ShieldCheck } from "lucide-react";
 import { mainNav, site } from "@/lib/site";
 import { waLink, waMessages } from "@/lib/whatsapp";
-import { itineraryPackages, mission, pillars } from "@/content";
+import { mission, pillars, popularPackages } from "@/content";
 import { Logo } from "./Logo";
 import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "./icons";
 
@@ -38,7 +38,7 @@ export function Footer() {
             <div>
               <h2 className="mb-5 font-sans text-[0.7rem] font-semibold uppercase tracking-eyebrow text-gold-light">Experiencias destacadas</h2>
               <ul className="text-sm">
-                {itineraryPackages.map((p) => (
+                {popularPackages.map((p) => (
                   <li key={p.slug}>
                     <Link href={`/experiencias/${p.slug}`} className="inline-flex min-h-[44px] min-w-[44px] items-center transition hover:text-ivory">{p.title}</Link>
                   </li>
@@ -117,12 +117,15 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-ivory/10 pt-8 text-xs text-ivory/50 md:flex-row md:items-center md:justify-between">
+        <div className="mt-12 flex flex-col gap-1 border-t border-ivory/10 pt-8 md:gap-4 text-xs text-ivory/50 md:flex-row md:items-center md:justify-between">
           <p>© {year} {site.name}. Todos los derechos reservados.</p>
           <p className="font-serif text-sm text-ivory/60">{site.essence}</p>
-          <a href={site.sustainabilityPolicyPdf} target="_blank" rel="noopener" className="tap-target inline-flex items-center gap-1 transition hover:text-ivory">
+          <a href={site.sustainabilityPolicyPdf} target="_blank" rel="noopener" className="inline-flex min-h-11 items-center gap-1 transition hover:text-ivory">
             Política de sostenibilidad (PDF) <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
           </a>
+          <Link href="/reservas-y-condiciones" className="inline-flex min-h-11 items-center gap-1 transition hover:text-ivory">
+            Reservas y condiciones
+          </Link>
         </div>
       </div>
     </footer>

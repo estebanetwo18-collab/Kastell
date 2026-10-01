@@ -59,10 +59,12 @@ const config: Config = {
       keyframes: {
         "slow-zoom": { "0%": { transform: "scale(1.08)" }, "100%": { transform: "scale(1)" } },
         marquee: { "0%": { transform: "translateX(0)" }, "100%": { transform: "translateX(-50%)" } },
+        "fade-up": { "0%": { opacity: "0", transform: "translateY(12px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },
       },
       animation: {
         "slow-zoom": "slow-zoom 2.4s cubic-bezier(0.22,1,0.36,1) both",
         marquee: "marquee 40s linear infinite",
+        "fade-up": "fade-up 0.45s ease-out both",
       },
     },
   },

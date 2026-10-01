@@ -19,5 +19,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
-  return [...pages, ...pkgs];
+  const extra = ["/experiencias/excursiones-de-un-dia", "/reservas-y-condiciones"].map((path) => ({
+    url: `${site.url}${path}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+  return [...pages, ...pkgs, ...extra];
 }

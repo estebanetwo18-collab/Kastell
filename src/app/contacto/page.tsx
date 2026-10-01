@@ -12,7 +12,7 @@ import { ContactPageForm } from "@/components/ContactPageForm";
 export const metadata = pageMetadata({
   title: "Contacto",
   description:
-    "Escríbenos por WhatsApp al +506 6407 2932 o envíanos tu solicitud. Diseñamos tu viaje, boda destino o evento en Costa Rica.",
+    "Escríbenos por WhatsApp al +506 7241 8210 o envíanos tu solicitud. Diseñamos tu viaje, boda destino o evento en Costa Rica.",
   path: "/contacto",
 });
 

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { cn } from "@/lib/cn";
 
 /** Hero editorial para páginas internas (fondo de foto + título grande). */
 export function PageHero({
@@ -8,19 +9,24 @@ export function PageHero({
   title,
   intro,
   image,
+  imagePosition,
   breadcrumb,
+  compact,
   children,
 }: {
   eyebrow: string;
   title: React.ReactNode;
   intro?: React.ReactNode;
   image: { src: string; alt: string };
+  imagePosition?: string;
   breadcrumb: string;
+  /** Altura reducida: deja ver antes el precio y los datos clave (páginas de detalle) */
+  compact?: boolean;
   children?: React.ReactNode;
 }) {
   return (
-    <section className="relative isolate flex min-h-[78svh] items-end overflow-hidden bg-ink text-ivory">
-      <Image src={image.src} alt={image.alt} fill priority sizes="100vw" className="-z-10 animate-slow-zoom object-cover" />
+    <section className={cn("relative isolate flex items-end overflow-hidden bg-ink text-ivory", compact ? "min-h-[46svh] md:min-h-[52svh]" : "min-h-[78svh]")}>
+      <Image src={image.src} alt={image.alt} fill priority sizes="100vw" style={{ objectPosition: imagePosition }} className="-z-10 animate-slow-zoom object-cover" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/45 to-ink/30" aria-hidden />
       <div className="container pb-16 pt-44 md:pb-24">
         <nav aria-label="Ruta de navegación" className="mb-8 text-sm text-ivory/75">

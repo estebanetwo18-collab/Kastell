@@ -11,3 +11,4 @@ export * from "./packages";
 export * from "./testimonials";
 export * from "./sustainability";
 export * from "./experienceTypes";
+export * from "./reservations";

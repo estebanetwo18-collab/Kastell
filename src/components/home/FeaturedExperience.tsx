@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Clock, MapPin } from "lucide-react";
 import { featuredPackage as pkg } from "@/content";
-import { formatPrice } from "../PackageCard";
+import { formatPrice } from "@/lib/format";
 import { ItineraryAccordion } from "../ItineraryAccordion";
 import { Reveal } from "../Reveal";
 import { WhatsAppButton } from "../WhatsAppButton";
@@ -30,9 +30,9 @@ export function FeaturedExperience() {
               <div className="absolute inset-x-4 bottom-4 rounded-3xl bg-ink/70 p-6 backdrop-blur-md">
                 <p className="text-xs uppercase tracking-[0.2em] text-ivory/70">Desde</p>
                 <p className="font-serif text-4xl text-ivory">
-                  {formatPrice(pkg.priceFrom!)} <span className="font-sans text-sm text-ivory/70">por persona</span>
+                  {formatPrice(pkg.price!.amount)} <span className="font-sans text-sm text-ivory/70">por persona</span>
                 </p>
-                <p className="mt-2 text-xs leading-relaxed text-ivory/60">{pkg.priceNote}</p>
+                <p className="mt-2 text-xs leading-relaxed text-ivory/70">{pkg.price!.note}</p>
               </div>
             </div>
           </Reveal>

@@ -18,7 +18,7 @@ export function ItineraryAccordion({ days, tone = "light", defaultOpen = 0 }: { 
           <div className="pb-8 md:pl-[7.25rem]">
             <p className={cn("max-w-2xl leading-relaxed", dark ? "text-ivory/75" : "text-ink-muted")}>{d.description}</p>
             <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
-              {d.highlights.map((h) => (
+              {(d.highlights ?? []).map((h) => (
                 <li key={h} className={cn("flex items-start gap-2.5 text-sm", dark ? "text-ivory/85" : "text-ink")}>
                   <Check className={cn("mt-0.5 h-4 w-4 shrink-0", dark ? "text-gold-light" : "text-gold-deep")} aria-hidden /> {h}
                 </li>
@@ -40,9 +40,11 @@ export function ItineraryAccordion({ days, tone = "light", defaultOpen = 0 }: { 
                 <span className={cn("w-20 shrink-0 text-xs font-semibold uppercase tracking-[0.2em] md:w-24", dark ? "text-gold-light" : "text-gold-deep")}>{d.label}</span>
                 <span className="flex-1">
                   <span className={cn("block font-serif text-lg leading-snug md:text-xl", dark ? "text-ivory" : "text-ink")}>{d.title}</span>
-                  <span className={cn("mt-1 inline-flex items-center gap-1.5 text-xs", dark ? "text-ivory/60" : "text-stone")}>
-                    <MapPin className="h-3 w-3" aria-hidden /> {d.location}
-                  </span>
+                  {d.location && (
+                    <span className={cn("mt-1 inline-flex items-center gap-1.5 text-xs", dark ? "text-ivory/60" : "text-stone")}>
+                      <MapPin className="h-3 w-3" aria-hidden /> {d.location}
+                    </span>
+                  )}
                 </span>
                 <span className={cn("grid h-10 w-10 shrink-0 place-items-center rounded-full border transition", dark ? "border-ivory/25 group-hover:border-gold-light" : "border-ink/15 group-hover:border-gold", isOpen && "rotate-45")}>
                   <Plus className="h-4 w-4" aria-hidden />

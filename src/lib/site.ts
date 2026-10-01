@@ -21,12 +21,12 @@ export const site = {
     countryCode: "CR",
   },
   whatsapp: {
-    display: "+506 6407 2932",
-    number: "50664072932",
+    display: "+506 7241 8210",
+    number: "50672418210",
   },
   phone: {
-    display: "+506 6407 2932",
-    href: "tel:+50664072932",
+    display: "+506 7241 8210",
+    href: "tel:+50672418210",
   },
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
   social: {

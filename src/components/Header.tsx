@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, ChevronDown, Menu, Phone, X } from "lucide-react";
 import { mainNav, site } from "@/lib/site";
 import { waLink, waMessages } from "@/lib/whatsapp";
-import { packages } from "@/content";
+import { countByCategory, packageCategories } from "@/content";
 import { cn } from "@/lib/cn";
 import { Logo } from "./Logo";
 import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "./icons";
@@ -125,7 +125,7 @@ export function Header() {
                       type="button"
                       aria-expanded={dropdown}
                       aria-controls="menu-experiencias"
-                      aria-label="Ver paquetes turísticos"
+                      aria-label="Ver categorías de paquetes y experiencias"
                       onClick={() => setDropdown((d) => !d)}
                       className={cn("grid h-11 w-11 place-items-center rounded-full transition", solid ? "text-ink" : "text-ivory")}
                     >
@@ -143,27 +143,31 @@ export function Header() {
                         className="absolute left-1/2 top-full w-[26rem] -translate-x-1/2 pt-3"
                       >
                         <div className="rounded-3xl border border-ink/5 bg-ivory p-3 shadow-float">
-                          <p className="px-4 pb-2 pt-3 text-xs font-semibold uppercase tracking-eyebrow text-gold-deep">Paquetes turísticos</p>
+                          <p className="px-4 pb-2 pt-3 text-xs font-semibold uppercase tracking-eyebrow text-gold-deep">Paquetes y experiencias</p>
                           <ul>
-                            {packages.map((p) => (
-                              <li key={p.slug}>
+                            {packageCategories.map((c) => (
+                              <li key={c.id}>
                                 <Link
-                                  href={p.kind === "itinerary" ? `/experiencias/${p.slug}` : p.href ?? "/experiencias"}
+                                  href={`/experiencias?categoria=${c.id}`}
                                   className="group flex items-start justify-between gap-4 rounded-2xl px-4 py-3 transition hover:bg-ivory-deep"
                                 >
                                   <span>
-                                    <span className="block font-serif text-lg leading-tight text-ink">{p.title}</span>
-                                    <span className="text-xs text-stone">
-                                      {p.kind === "itinerary" ? `${p.durationDays} días / ${p.durationNights} noches` : p.durationLabel} · {p.destinations.slice(0, 3).join(" · ")}
-                                    </span>
+                                    <span className="block font-serif text-lg leading-tight text-ink">{c.label}</span>
+                                    <span className="text-xs text-stone">{countByCategory(c.id)} opciones</span>
                                   </span>
                                   <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-gold-deep opacity-0 transition group-hover:opacity-100" aria-hidden />
                                 </Link>
                               </li>
                             ))}
+                            <li>
+                              <Link href="/reservas-y-condiciones" className="group flex items-start justify-between gap-4 rounded-2xl px-4 py-3 transition hover:bg-ivory-deep">
+                                <span className="block font-serif text-lg leading-tight text-ink">Reservas y condiciones</span>
+                                <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-gold-deep opacity-0 transition group-hover:opacity-100" aria-hidden />
+                              </Link>
+                            </li>
                           </ul>
                           <Link href="/experiencias" className="mt-1 flex items-center justify-between rounded-2xl bg-ink px-4 py-3 text-sm font-semibold text-ivory transition hover:bg-ink-soft">
-                            Ver todas las experiencias <ArrowUpRight className="h-4 w-4" aria-hidden />
+                            Ver todos los paquetes <ArrowUpRight className="h-4 w-4" aria-hidden />
                           </Link>
                         </div>
                       </motion.div>

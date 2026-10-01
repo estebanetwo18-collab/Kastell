@@ -7,6 +7,7 @@ import { ValueProposition } from "@/components/home/ValueProposition";
 import { Offer } from "@/components/home/Offer";
 import { Difference } from "@/components/home/Difference";
 import { FeaturedExperience } from "@/components/home/FeaturedExperience";
+import { PackagesTeaser } from "@/components/home/PackagesTeaser";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { SustainabilityTeaser } from "@/components/home/SustainabilityTeaser";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -30,6 +31,7 @@ export default function HomePage() {
       <Offer />
       <Difference />
       <FeaturedExperience />
+      <PackagesTeaser />
       <TestimonialsSection />
       <SustainabilityTeaser />
       <FinalCTA whatsappMessage={waMessages.finalCta} />
