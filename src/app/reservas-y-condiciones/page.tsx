@@ -47,7 +47,7 @@ export default function ReservasPage() {
                   <div className="space-y-6 pb-7 pr-2 text-[0.95rem] leading-relaxed text-ink-muted">
                     {s.blocks.map((b, i) => (
                       <div key={i}>
-                        {b.heading && <h3 className="mb-2 font-serif text-base font-semibold text-ink">{b.heading}</h3>}
+                        {b.heading && <h2 className="mb-2 font-serif text-base font-semibold text-ink">{b.heading}</h2>}
                         {b.paragraphs?.map((p) => (
                           <p key={p} className="mb-3 last:mb-0">
                             {p}
